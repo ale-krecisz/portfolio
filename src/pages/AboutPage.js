@@ -1,17 +1,16 @@
 import React from 'react';
 
-import pic from '../assets/default-slide.jpg';
+import pic from 'assets/default-slide.jpg';
 
-import Bunny from '../components/Bunny.js';
+import Bunny from 'components/Bunny.js';
+import BackgroundLinesComponent from 'components/BackgroundLinesComponent/BackgroundLinesComponent';
+import MainTitle from  'components/typography/MainTitle';
+import Paragraph from  'components/typography/Paragraph';
 
-import BackgroundLinesComponent from '../components/BackgroundLinesComponent/BackgroundLinesComponent';
+import Container from 'components/layout/Container';
+import CopyContainer from 'components/layout/CopyContainer';
 
-import {
-	Container,
-	Paragraph,
-	CopyContainer,
-	MainTitle
-} from '../components/commonStyles';
+
 
 const AboutPage = () => {
 	 

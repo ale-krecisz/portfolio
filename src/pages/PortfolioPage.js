@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import unsplash from '../api/unsplash';
+import unsplash from 'api/unsplash';
 
-import Background from '../components/BackgroundComponent/BackgroundComponent';
-import SearchBar from '../components/SearchBarComponent/SearchBarComponent';
-import Loader from '../components/LoaderComponent';
+import Background from 'components/BackgroundComponent/BackgroundComponent';
+import SearchBar from 'components/SearchBarComponent/SearchBarComponent';
+import Loader from 'components/LoaderComponent';
+import MainTitle from  'components/typography/MainTitle';
+import Paragraph from  'components/typography/Paragraph';
 
-import {
-	Container,
-	MainTitle,
-	Paragraph,
-	CopyContainer
-} from '../components/commonStyles';
-
+import Container from 'components/layout/Container';
+import CopyContainer from 'components/layout/CopyContainer';
 
 let timer;
 

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import defaultSlide from '../../assets/default-slide.jpg';
+import defaultSlide from 'assets/default-slide.jpg';
 
 import {
 	Container,

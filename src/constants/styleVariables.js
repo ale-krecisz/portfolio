@@ -7,6 +7,7 @@ export default {
 			light: '#eaeaea',
 			mid: '#b6b6b6',
 			dark: '#7a7a7a',
+			xDark: '#1a1a1a',
 		}, 
 		white: '#fff', 
 	},
@@ -17,7 +18,12 @@ export default {
 		modalOverflow: 99,
 	},
 	fonts: {
-		secondary: '\'Lato\', sans-serif',
-		primary: '\'Big Shoulders Display\', cursive'
-	}
+		family: '\'Fira Sans Extra Condensed\', cursive',
+		size: {
+			extraSmall: '12px',
+			small: '14px',
+			medium: '16px',
+			large: '24px',
+		}
+	},
 };

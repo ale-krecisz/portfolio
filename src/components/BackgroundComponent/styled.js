@@ -1,5 +1,5 @@
 import styled, {keyframes} from 'styled-components';
-import variables from '../../constants/styleVariables';
+import variables from 'constants/styleVariables';
 
 const SliderAnimation = keyframes`
     0% {
@@ -10,23 +10,23 @@ const SliderAnimation = keyframes`
     }
 `;
 
-const SliderInvert = keyframes`
-    0% {
-        filter: invert(100%);
-    }
+// const SliderInvert = keyframes`
+//     0% {
+//         filter: invert(100%);
+//     }
 
-    10% {
-        filter: invert(0%);
-    }
+//     10% {
+//         filter: invert(0%);
+//     }
 
-    20% {
-        filter: invert(100%);
-    }
+//     20% {
+//         filter: invert(100%);
+//     }
 
-    30% {
-        filter: invert(0%);
-    }
-`;
+//     30% {
+//         filter: invert(0%);
+//     }
+// `;
 
 export const Container = styled.div`
     align-content: center;
@@ -47,7 +47,6 @@ export const BackgroundContainer = styled.div`
     top: 0;
     width: 50%;
     z-index: 2;
-    animation: ${SliderInvert} 1s alternate 4;
 
     &:nth-of-type(2) {
         left: auto;
@@ -87,7 +86,7 @@ export const Overlay = styled.div`
     background: #000;
     height: 100%;
     left: 0;
-    opacity: 0.2;
+    opacity: 0.35;
     position: absolute;
     top: 0;
     width: 100%;
@@ -99,7 +98,7 @@ export const Warning = styled.h5`
     background: ${variables.colors.white};
     border-radius: 4px;
     color: ${variables.colors.gray.dark};
-    font-size: 16px;
+    font-size: ${variables.fonts.size.medium};
     font-weight: 500;
     margin: 20px;
     text-align: center;

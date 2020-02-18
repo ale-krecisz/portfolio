@@ -1,20 +1,24 @@
 import React from 'react';
-import ROUTES from '../../constants/route-constants';
-import headerLinks from './headerLinks';
+import ROUTES from 'constants/route-constants';
+import {headerLinks, socialLinks} from './headerLinks';
 
 import {
+	LinksContainer,
+	Logo, 
 	Nav, 
-	NavItem
+	NavItem,
+	SocialContainer,
+	SocialLink
 } from './styled';
 
 const HeaderComponent = () => {
 
 	return (
 		<Nav>
-			<NavItem to={ROUTES.ROOT}>
+			<Logo to={ROUTES.ROOT}>
                 ale.krecisz
-			</NavItem>
-			<div>
+			</Logo>
+			<LinksContainer>
 				{headerLinks.map((link) => (
 					<NavItem 
 						key={link.name}
@@ -23,7 +27,18 @@ const HeaderComponent = () => {
 						{link.name}
 					</NavItem>
 				))}
-			</div>    
+			</LinksContainer>
+			<SocialContainer>
+				{socialLinks.map((link) => (
+					<SocialLink 
+						key={link.name}
+						href={link.link}
+						target="_blank"
+					>
+						{link.icon}
+					</SocialLink>
+				))}
+			</SocialContainer>
 		</Nav>
 	);
 };

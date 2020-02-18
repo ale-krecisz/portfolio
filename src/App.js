@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import ROUTES from './constants/route-constants';
 
-import variables from './constants/styleVariables';
-import HeaderComponent from './components/HeaderComponent/HeaderComponent';
+import ROUTES from 'constants/route-constants';
+import GlobalStyle from 'constants/GlobalStyle';
 
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import PortfolioPage from './pages/PortfolioPage';
-import NoMatchPage from './pages/NoMatchPage';
+
+import HeaderComponent from 'components/HeaderComponent/HeaderComponent';
+
+import HomePage from 'pages/Home';
+import AboutPage from 'pages/AboutPage';
+import ContactPage from 'pages/ContactPage';
+import PortfolioPage from 'pages/PortfolioPage';
+import NoMatchPage from 'pages/NoMatchPage';
 
 
 const App = () => (
@@ -29,19 +30,5 @@ const App = () => (
 		</>
 	</BrowserRouter>
 );
-
-const GlobalStyle = createGlobalStyle`
-	* {
-		box-sizing: border-box;
-		padding: 0;
-		margin: 0;
-		outline: none;
-		font-family: ${variables.fonts.primary};
-
-		&:link, &:visited, &:hover, &:focus, &:active {
-		outline: none;
-		}
-	}
-`;
 
 export default App;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {
-	Container,
-	MainTitle,
-} from '../components/commonStyles';
+import Container from 'components/layout/Container';
+import MainTitle from  'components/typography/MainTitle';
+
+
 
 const ContactPage = () => {
 

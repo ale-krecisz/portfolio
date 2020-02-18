@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import variables from '../constants/styleVariables';
+import variables from 'constants/styleVariables';
 
 const spin = keyframes`
     0% { 
@@ -27,15 +27,17 @@ const Loader = styled.div`
 const Container = styled.div`
     height: 100vh;
     width: 100%;
-    background: ${variables.colors.white};
+    background: ${variables.colors.brandSecond};
     z-index: calc(${variables.zIndex.content} + 1);
     position: absolute;
     top: 0;
     left: 0;
 `;
 
-export default () => (
+const LoaderComponent = () => (
 	<Container>
 		<Loader />
 	</Container>
 );
+
+export default LoaderComponent;

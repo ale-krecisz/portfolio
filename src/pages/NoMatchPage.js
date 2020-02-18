@@ -1,14 +1,13 @@
 import React from 'react';
 import ROUTES from '../constants/route-constants';
 
-import BackgroundLinesComponent from '../components/BackgroundLinesComponent/BackgroundLinesComponent';
-import GlitchText from '../components/GlitchText/GlitchText';
+import BackgroundLinesComponent from 'components/BackgroundLinesComponent/BackgroundLinesComponent';
+import GlitchText from 'components/GlitchText/GlitchText';
 
-import {
-	Button,
-	Container,
-	CopyContainer
-} from '../components/commonStyles';
+import Container from 'components/layout/Container';
+import CopyContainer from 'components/layout/CopyContainer';
+
+import Button from 'components/Button';
 
 const NoMatchPage = () => {
 

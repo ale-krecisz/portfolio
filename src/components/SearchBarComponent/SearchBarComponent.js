@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import SearchIcon from '../../assets/search.svg';
+
+import Button from 'components/Button';
 
 import {
-	Button,
-	ButtonIcon,
 	Form,
 	Input,
 } from './styled';
@@ -28,8 +27,8 @@ const SearchBarComponent = (props) => {
 				placeholder='Do You wanna try?'
 				value={searchValue}
 			/>
-			<Button type='submit'>
-				<ButtonIcon src={SearchIcon} />
+			<Button color={true} as='button' type='submit'>
+				Let's try!
 			</Button>
 		</Form>
 	);
