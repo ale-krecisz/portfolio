@@ -3,12 +3,7 @@ import {zIndex, colors} from 'constants/styleVariables';
 import {Container} from 'components/layout/Container';
 
 export const HomeContainer = styled(Container)`
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
-    position: relative;
 `;
 
 export const MainTitle = styled.h1`

@@ -8,9 +8,9 @@ import BackgroundLinesComponent from '../BackgroundLinesComponent/BackgroundLine
 
 export const Container = styled.section`
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 800px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     position: relative;
     background-color: ${colors.white};

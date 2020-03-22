@@ -25,12 +25,12 @@ const Loader = styled.div`
 `;
 
 const Container = styled.div`
-    height: 100vh;
     width: 100%;
     background-color: ${colors.white};
     z-index: calc(${zIndex.content} + 1);
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
 `;
 

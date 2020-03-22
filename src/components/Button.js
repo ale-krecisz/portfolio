@@ -18,12 +18,10 @@ const Button = ({as, children, ...props}) => {
 Button.propTypes = {
 	as: PropTypes.node,
 	children: PropTypes.string,
-	// color: PropTypes.bool,
 };
 
 Button.defaultProps = {
 	as: Link,
-	// color: false,
 	to: '',
 };
 
@@ -39,8 +37,8 @@ const Container = styled(Link)`
     font-size: ${fonts.size.small};
     min-width: 160px;
     margin-top: 40px;
-    border-color: transparent;
     padding: 17px 40px;
+    border: none;
 
     &::after, &::before {
         content: '';
@@ -109,9 +107,9 @@ const Container = styled(Link)`
             left: 0;
             top: 0;
         }
-    }
+    };
 
-    /* ${props => props.color && css`
+    ${props => props.color && css`
         background-color: ${colors.brandSecond};
         color: ${colors.white};
 
@@ -127,7 +125,7 @@ const Container = styled(Link)`
                 background-color: ${colors.white};
             }
         }
-    `}; */
+    `};
 `;
 
 export default Button;

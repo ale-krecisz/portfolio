@@ -14,7 +14,7 @@ let timer;
 const HomePage = () => {
 	const [loading, setLoading] = useState(true);
 	const [images, setImages] = useState([]);
-	const [searchValue, setSearchValue] = useState('mountains');
+	const [searchValue, setSearchValue] = useState('people');
 
 	useEffect(() => {
 		const getData = async () => {
@@ -25,7 +25,7 @@ const HomePage = () => {
 				setImages(result.data.results);
 				timer = setTimeout(() => {
 					setLoading(false);
-				}, 500);
+				}, 50);
 			});
 		};
 

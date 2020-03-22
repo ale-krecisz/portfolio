@@ -31,12 +31,7 @@ const SliderAnimation = keyframes`
 export const Container = styled.div`
     align-content: center;
     display: flex;
-    height: 100vh;
     justify-content: center;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
 `;
 
 export const BackgroundContainer = styled.div`
