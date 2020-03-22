@@ -1,5 +1,4 @@
-import React, {useRef} from 'react';
-import * as PIXI from 'pixi.js';
+import React from 'react';
 import pic from 'assets/default-slide.jpg';
 import { Stage, Sprite } from '@inlet/react-pixi';
 

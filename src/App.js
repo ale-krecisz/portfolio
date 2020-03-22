@@ -7,11 +7,11 @@ import GlobalStyle from 'constants/GlobalStyle';
 
 import HeaderComponent from 'components/HeaderComponent/HeaderComponent';
 
-import HomePage from 'pages/Home';
+import HomePage from 'pages/HomePage/HomePage';
 import AboutPage from 'pages/AboutPage';
 import ContactPage from 'pages/ContactPage';
 import PortfolioPage from 'pages/PortfolioPage';
-import NoMatchPage from 'pages/NoMatchPage';
+import NoMatchPage from 'pages/NoMatchPage/NoMatchPage';
 
 
 const App = () => (

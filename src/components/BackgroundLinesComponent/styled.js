@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import variables from 'constants/styleVariables';
+import {colors} from 'constants/styleVariables';
 
 export const Container = styled.div`
     display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const Line = styled.div`
     height: 100%;
     width: 2px;
-    background: ${variables.colors.gray.xLight};
+    background-color: ${colors.gray.xLight};
 `;
 
 export const VerticalContainer = styled.div`
@@ -38,7 +38,7 @@ export const HorizontalContainer = styled(VerticalContainer)`
 
 export const TopContainer = styled(VerticalContainer)`
     ${Line} {
-        background: ${variables.colors.brand};
+        background-color: ${colors.brand};
         opacity: .5;
         width: 1px;
     }

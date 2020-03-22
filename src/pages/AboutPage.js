@@ -1,25 +1,22 @@
 import React from 'react';
 
-import pic from 'assets/default-slide.jpg';
+// import pic from 'assets/default-slide.jpg';
 
 import Bunny from 'components/Bunny.js';
-import BackgroundLinesComponent from 'components/BackgroundLinesComponent/BackgroundLinesComponent';
-import MainTitle from  'components/typography/MainTitle';
 import Paragraph from  'components/typography/Paragraph';
 
-import Container from 'components/layout/Container';
+import {LayoutContainer} from 'components/layout/Container';
 import CopyContainer from 'components/layout/CopyContainer';
 
 
 
 const AboutPage = () => {
-	 
+
 	return (
-		<Container>
-			<BackgroundLinesComponent />
-			<MainTitle>
+		<LayoutContainer>
+			{/* <MainTitle>
 			Co tam Kręcisz?
-			</MainTitle>
+			</MainTitle> */}
 
 			<CopyContainer>
 				<Paragraph>
@@ -30,8 +27,7 @@ const AboutPage = () => {
 
 				<Bunny />
 			</CopyContainer>
-		</Container>
-
+		</LayoutContainer>
 	);
 };
 

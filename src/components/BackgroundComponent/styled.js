@@ -1,5 +1,5 @@
 import styled, {keyframes} from 'styled-components';
-import variables from 'constants/styleVariables';
+import {colors, fonts, zIndex} from 'constants/styleVariables';
 
 const SliderAnimation = keyframes`
     0% {
@@ -83,7 +83,7 @@ export const Image = styled.img`
 `;
 
 export const Overlay = styled.div`
-    background: #000;
+    background-color: #000;
     height: 100%;
     left: 0;
     opacity: 0.35;
@@ -95,14 +95,14 @@ export const Overlay = styled.div`
 
 
 export const Warning = styled.h5`
-    background: ${variables.colors.white};
+    background-color: ${colors.white};
     border-radius: 4px;
-    color: ${variables.colors.gray.dark};
-    font-size: ${variables.fonts.size.medium};
+    color: ${colors.gray.dark};
+    font-size: ${fonts.size.medium};
     font-weight: 500;
     margin: 20px;
     text-align: center;
     padding: 20px;
-    z-index: ${variables.zIndex.content};
+    z-index: ${zIndex.content};
     height: fit-content;
 `;

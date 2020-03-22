@@ -1,23 +1,15 @@
 import React from 'react';
 
-import Container from 'components/layout/Container';
-import MainTitle from  'components/typography/MainTitle';
-
+import {LayoutContainer} from 'components/layout/Container';
 
 
 const ContactPage = () => {
 
 
 	return (
-		<Container>
+		<LayoutContainer>
       
-			<MainTitle
-				contentEditable={true}
-				mainPage
-			>
-        Hello world!
-			</MainTitle>
-		</Container>
+		</LayoutContainer>
 
 	);
 };

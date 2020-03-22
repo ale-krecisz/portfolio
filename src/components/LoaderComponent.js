@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import variables from 'constants/styleVariables';
+import {colors, zIndex} from 'constants/styleVariables';
 
 const spin = keyframes`
     0% { 
@@ -12,8 +12,8 @@ const spin = keyframes`
 `;
 
 const Loader = styled.div`
-    border: 3px solid ${variables.colors.gray.light};
-    border-top: 3px solid ${variables.colors.brand};
+    border: 3px solid ${colors.gray.light};
+    border-top: 3px solid ${colors.brand};
     border-radius: 50%;
     width: 75px;
     height: 75px;
@@ -27,8 +27,8 @@ const Loader = styled.div`
 const Container = styled.div`
     height: 100vh;
     width: 100%;
-    background: ${variables.colors.brandSecond};
-    z-index: calc(${variables.zIndex.content} + 1);
+    background-color: ${colors.white};
+    z-index: calc(${zIndex.content} + 1);
     position: absolute;
     top: 0;
     left: 0;

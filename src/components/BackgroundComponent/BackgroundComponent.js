@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import defaultSlide from 'assets/default-slide.jpg';
+import PropTypes from 'prop-types';
 
 import {
 	Container,
@@ -9,8 +10,7 @@ import {
 	Warning
 } from './styled';
 
-const BackgroundComponent = (props) => {
-	const { images } = props;
+const BackgroundComponent = ({images}) => {
       
 	const renderDiv = (src, alt) => {
 		let item = [];
@@ -42,7 +42,7 @@ const BackgroundComponent = (props) => {
 						'underground image'
 					)}
 
-					<Warning>We can't find what You're looking for. 
+					<Warning>We can&apos;t find what You&apos;re looking for. 
 						<br/>Please try again.
 					</Warning>
 				</Fragment>
@@ -53,5 +53,9 @@ const BackgroundComponent = (props) => {
 	);
 };
 
+
+BackgroundComponent.propTypes = {
+	images: PropTypes.array
+};
 
 export default BackgroundComponent;

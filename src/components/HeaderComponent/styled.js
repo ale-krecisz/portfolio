@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import variables from 'constants/styleVariables';
+import {colors, fonts} from 'constants/styleVariables';
 
 export const Nav = styled.header`
     height: 100%;
@@ -13,13 +13,13 @@ export const Nav = styled.header`
 const MainLink = styled(NavLink).attrs({
 	exact: true,
 })`
-    color: ${variables.colors.white};
+    color: ${colors.white};
     position: relative;
     text-shadow: 1px 1px 1px rgba(0,0,0,.45);
 
     &::after {
         content: '';
-        background-image: linear-gradient(${variables.colors.brandSecond}, ${variables.colors.brandSecond});
+        background-image: linear-gradient(${colors.brandSecond}, ${colors.brandSecond});
         position: absolute;
         bottom: 7px;
         height: 10px;
@@ -39,7 +39,7 @@ const MainLink = styled(NavLink).attrs({
 `;
 
 export const Logo = styled(MainLink)`
-    font-size: ${variables.fonts.size.medium};
+    font-size: ${fonts.size.medium};
     left: 0;
     margin: 10px 20px 0 32px;
     padding: 10px 5px;
@@ -51,7 +51,7 @@ export const Logo = styled(MainLink)`
 `;
 
 export const NavItem = styled(MainLink)`
-    font-size: ${variables.fonts.size.small};
+    font-size: ${fonts.size.small};
     letter-spacing: 3px;
     margin-right: 30px;
     padding: 10px 0 10px 5px;
@@ -60,9 +60,9 @@ export const NavItem = styled(MainLink)`
 `;
 
 export const SocialLink = styled.a`
-    background: ${variables.colors.gray.xDark};
+    background-color: ${colors.gray.xDark};
     border-radius: 3px;
-    color: ${variables.colors.white};
+    color: ${colors.white};
     margin-right: 20px;
     opacity: 0.7;
     padding: 8px;
@@ -76,7 +76,7 @@ export const SocialLink = styled.a`
     }
 
     &:hover {
-        background: ${variables.colors.brandSecond};
+        background-color: ${colors.brandSecond};
         opacity: 1;
     }
 `;

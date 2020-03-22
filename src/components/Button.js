@@ -3,11 +3,11 @@ import styled, {css} from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import variables from 'constants/styleVariables';
+import {colors, fonts} from 'constants/styleVariables';
 
-const Button = ({as, children, color, ...props}) => {
+const Button = ({as, children, ...props}) => {
 	return(
-		<Container as={as} color={color} {...props}>
+		<Container as={as} {...props}>
 			<span>
 				{children}
 			</span>
@@ -16,27 +16,27 @@ const Button = ({as, children, color, ...props}) => {
 };
 
 Button.propTypes = {
-    as: PropTypes.node,
-    children: PropTypes.string,
-    color: PropTypes.bool,
+	as: PropTypes.node,
+	children: PropTypes.string,
+	// color: PropTypes.bool,
 };
 
 Button.defaultProps = {
-    as: Link,
-    color: false,
-}
+	as: Link,
+	// color: false,
+	to: '',
+};
 
 const Container = styled(Link)`
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     position: relative;
     transition: all 0.15s ease-in-out 0.25s;
-    color: ${variables.colors.brand};
-    background-color: ${variables.colors.white};
+    color: ${colors.brand};
     font-weight: 500;
-    font-size: ${variables.fonts.size.small};
+    font-size: ${fonts.size.small};
     min-width: 160px;
     margin-top: 40px;
     border-color: transparent;
@@ -47,7 +47,7 @@ const Container = styled(Link)`
         top: -14px;
         left: 0;
         height: 100%;
-        background-color: ${variables.colors.brand};
+        background-color: ${colors.brand};
         width: 1px;
         position: absolute;
         transition: all 0.2s ease-in-out;
@@ -73,7 +73,7 @@ const Container = styled(Link)`
             left: -18px;
             top: 0;
             height: 1px;
-            background-color: ${variables.colors.brand};
+            background-color: ${colors.brand};
             width: 100%;
             position: absolute;
             transition: all 0.2s ease-in-out;
@@ -88,8 +88,17 @@ const Container = styled(Link)`
     }
 
     &:hover {
-        background-color: ${variables.colors.brand};
-        color: ${variables.colors.white};
+        color: ${colors.white};
+
+        &::after, &::before {
+            width: 2px;
+        } 
+
+        span {
+            &::after, &::before {
+                height: 2px;
+            }
+        }
         
         &::after, span::after {
             right: 0;
@@ -102,23 +111,23 @@ const Container = styled(Link)`
         }
     }
 
-    ${props => props.color && css`
-        background-color: ${variables.colors.brandSecond};
-        color: ${variables.colors.white};
+    /* ${props => props.color && css`
+        background-color: ${colors.brandSecond};
+        color: ${colors.white};
 
         &::after, &::before, span::before, span::after {
-            background-color: ${variables.colors.brandSecond};
+            background-color: ${colors.brandSecond};
         }
 
         &:hover {
-            background-color: ${variables.colors.white};
-            color: ${variables.colors.brandSecond};
+            background-color: ${colors.white};
+            color: ${colors.brandSecond};
 
                 &::after, &::before, span::before, span::after {
-                background-color: ${variables.colors.white};
+                background-color: ${colors.white};
             }
         }
-    `};
+    `}; */
 `;
 
 export default Button;

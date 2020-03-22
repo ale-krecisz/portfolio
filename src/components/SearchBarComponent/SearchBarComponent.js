@@ -1,4 +1,6 @@
+
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 
 import Button from 'components/Button';
 
@@ -7,7 +9,7 @@ import {
 	Input,
 } from './styled';
 
-const SearchBarComponent = (props) => {
+const SearchBar = ({onSubmit}) => {
 	const [searchValue, setSearchValue] = useState('');
 
 	const handleOnChange = (e) => {
@@ -16,7 +18,7 @@ const SearchBarComponent = (props) => {
 
 	const onSearchSubmit = (e) => {
 		e.preventDefault();
-		props.onSubmit(searchValue);
+		onSubmit(searchValue);
 	};
 
 	return (
@@ -28,10 +30,14 @@ const SearchBarComponent = (props) => {
 				value={searchValue}
 			/>
 			<Button color={true} as='button' type='submit'>
-				Let's try!
+				Let&apos;s try!
 			</Button>
 		</Form>
 	);
 };
 
-export default SearchBarComponent;
+SearchBar.propTypes = {
+	onSubmit: PropTypes.func
+};
+
+export default SearchBar;

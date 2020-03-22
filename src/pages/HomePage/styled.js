@@ -1,0 +1,32 @@
+import styled from 'styled-components';
+import {zIndex, colors} from 'constants/styleVariables';
+import {Container} from 'components/layout/Container';
+
+export const HomeContainer = styled(Container)`
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+`;
+
+export const MainTitle = styled.h1`
+    font-size: 160px;
+    color: ${props => props.mainPage ? colors.white : colors.brand};
+    z-index: ${zIndex.content};
+    font-weight: 900;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 0;
+    white-space: nowrap;
+    position: absolute;
+    left: 290px;
+    top: 50%;
+    transform: rotate(-90deg) translate(-50%);
+    transform-origin: top left;
+
+    @media screen and (max-height: 800px){
+        font-size: 120px;
+    }
+`;

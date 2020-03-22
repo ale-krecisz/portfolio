@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import variables from 'constants/styleVariables';
+import {colors, fonts, zIndex} from 'constants/styleVariables';
 
 export const Input = styled.input`
-    background: ${variables.colors.white};
+    background-color: ${colors.white};
     border: none;
     display: flex;
-    font-size: ${variables.fonts.size.small};
+    font-size: ${fonts.size.small};
     font-weight: 300;
     height: 50px;
     letter-spacing: 1px;
@@ -15,5 +15,5 @@ export const Input = styled.input`
 `;
 
 export const Form = styled.form`
-    z-index: ${variables.zIndex.content};
+    z-index: ${zIndex.content};
 `;

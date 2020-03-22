@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import variables from './styleVariables';
+import {colors, fonts} from './styleVariables';
 
 export default createGlobalStyle`
 	@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:200,400,700,800&display=swap');
@@ -9,7 +9,7 @@ export default createGlobalStyle`
 		padding: 0;
 		margin: 0;
 		outline: none;
-		font-family: ${variables.fonts.family};
+		font-family: ${fonts.family};
 
 		&:link, &:visited, &:hover, &:focus, &:active {
 			outline: none;
@@ -17,7 +17,7 @@ export default createGlobalStyle`
 	}
 
 	body {
-		background-color: ${variables.colors.brandSecond};
+		background-color: ${colors.brandSecond};
 	}
 
 	a {
