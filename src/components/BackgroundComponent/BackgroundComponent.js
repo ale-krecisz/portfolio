@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import defaultSlide from 'assets/default-slide.jpg';
 import PropTypes from 'prop-types';
 
@@ -7,11 +7,11 @@ import {
 	BackgroundContainer,
 	Image,
 	Overlay,
-	Warning
 } from './styled';
 
 const BackgroundComponent = ({images}) => {
-      
+
+
 	const renderDiv = (src, alt) => {
 		let item = [];
 		for (let i = 0; i < 4; i++) {
@@ -35,19 +35,12 @@ const BackgroundComponent = ({images}) => {
 				renderDiv(
 					images.urls.regular, 
 					images.alt_description
-				)) : ((
-				<Fragment>
-					{renderDiv(
-						defaultSlide,
-						'underground image'
-					)}
-
-					<Warning>We can&apos;t find what You&apos;re looking for. 
-						<br/>Please try again.
-					</Warning>
-				</Fragment>
-			))
-			}
+				)) : (
+				renderDiv(
+					defaultSlide,
+					'underground image'
+				)
+			)}
 			<Overlay />
 		</Container>
 	);
@@ -55,7 +48,7 @@ const BackgroundComponent = ({images}) => {
 
 
 BackgroundComponent.propTypes = {
-	images: PropTypes.array
+	images: PropTypes.object
 };
 
 export default BackgroundComponent;

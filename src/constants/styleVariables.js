@@ -8,7 +8,9 @@ export const colors = {
 		dark: '#7a7a7a',
 		xDark: '#1a1a1a',
 	}, 
+	black: '#000',
 	white: '#fff', 
+	red: '#8b0101'
 };
 
 export const zIndex = {

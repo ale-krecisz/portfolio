@@ -12,7 +12,7 @@ const spin = keyframes`
 `;
 
 const Loader = styled.div`
-    border: 3px solid ${colors.gray.light};
+    border: 3px solid ${colors.gray.xLight};
     border-top: 3px solid ${colors.brand};
     border-radius: 50%;
     width: 75px;

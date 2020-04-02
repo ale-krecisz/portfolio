@@ -22,7 +22,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
 	as: Link,
-	to: '',
 };
 
 const Container = styled(Link)`
@@ -110,20 +109,27 @@ const Container = styled(Link)`
     };
 
     ${props => props.color && css`
+        transition: all 0.15s ease-in-out;
         background-color: ${colors.brandSecond};
         color: ${colors.white};
+
+        
+        &::after, &::before {
+            width: 2px;
+        }
+
+        span {
+            &::after, &::before {
+                height: 2px;
+            }
+        }
 
         &::after, &::before, span::before, span::after {
             background-color: ${colors.brandSecond};
         }
 
         &:hover {
-            background-color: ${colors.white};
-            color: ${colors.brandSecond};
-
-                &::after, &::before, span::before, span::after {
-                background-color: ${colors.white};
-            }
+            background-color: rgba(0,0,0,0.4);
         }
     `};
 `;

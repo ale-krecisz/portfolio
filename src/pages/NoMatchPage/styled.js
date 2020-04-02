@@ -51,7 +51,6 @@ export const Container = styled.section`
     width: 100%;
     display: flex;
     padding: 80px 40px;
-    justify-content: center;
     position: relative;
 
      &::before, &::after {

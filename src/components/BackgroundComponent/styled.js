@@ -1,5 +1,5 @@
 import styled, {keyframes} from 'styled-components';
-import {colors, fonts, zIndex} from 'constants/styleVariables';
+import {colors} from 'constants/styleVariables';
 
 const SliderAnimation = keyframes`
     0% {
@@ -9,24 +9,6 @@ const SliderAnimation = keyframes`
         transform: translate(-50%, -50%) scale(1.25);
     }
 `;
-
-// const SliderInvert = keyframes`
-//     0% {
-//         filter: invert(100%);
-//     }
-
-//     10% {
-//         filter: invert(0%);
-//     }
-
-//     20% {
-//         filter: invert(100%);
-//     }
-
-//     30% {
-//         filter: invert(0%);
-//     }
-// `;
 
 export const Container = styled.div`
     align-content: center;
@@ -78,26 +60,12 @@ export const Image = styled.img`
 `;
 
 export const Overlay = styled.div`
-    background-color: #000;
+    background-color: ${colors.black};
     height: 100%;
     left: 0;
-    opacity: 0.35;
+    opacity: 0.45;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 3;
-`;
-
-
-export const Warning = styled.h5`
-    background-color: ${colors.white};
-    border-radius: 4px;
-    color: ${colors.gray.dark};
-    font-size: ${fonts.size.medium};
-    font-weight: 500;
-    margin: 20px;
-    text-align: center;
-    padding: 20px;
-    z-index: ${zIndex.content};
-    height: fit-content;
 `;
