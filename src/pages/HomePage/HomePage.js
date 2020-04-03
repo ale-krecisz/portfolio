@@ -16,7 +16,8 @@ const HomePage = () => {
 	const [loading, setLoading] = useState(true);
 	const [images, setImages] = useState([]);
 	const [searchValue, setSearchValue] = useState('buiding');
-	const [randomNumber, setRandomNumber] = useState(2);
+    const [randomNumber, setRandomNumber] = useState(2);
+    const [message, setMessage] = useState('');
 
 
 	const getData = useCallback(async () => {
@@ -24,11 +25,16 @@ const HomePage = () => {
 		await unsplash.get('/search/photos', {
 			params: { query: searchValue },
 		}).then(result => {
-			setImages(result.data.results);
+            setImages(result.data.results);
+            if(images.length < 0) {
+                setMessage('Oh no, we don\'t have what You\'ve been looking for.');
+            }
 			timer = setTimeout(() => {
 				setLoading(false);
 			}, 50);
-		});
+		}).catch(error => {
+            setMessage(error);
+        });
 		return () => clearTimeout(timer);
 	}, [searchValue]);
 
@@ -46,7 +52,7 @@ const HomePage = () => {
 		<HomeContainer>
 			{ loading && <Loader /> }
 			<Notification 
-				message="Didn't find anything. Please try again" />
+				message={message} />
 			<Background 
 				images={images[randomNumber]}
 			/>
