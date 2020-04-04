@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {colors} from 'constants/styleVariables';
 import PropTypes from 'prop-types';
 
-import BackgroundLinesComponent from '../BackgroundLinesComponent/BackgroundLinesComponent';
+import BackgroundLines from '../BackgroundLines/BackgroundLines';
 
 
 export const Container = styled.section`
@@ -25,7 +25,7 @@ export const Main = styled.div`
 
 export const LayoutContainer = ({children}) => (
 	<Container>
-		<BackgroundLinesComponent />
+		<BackgroundLines />
 		<Main>{children}
 		</Main>
 	</Container>

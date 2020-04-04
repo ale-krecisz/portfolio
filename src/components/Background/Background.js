@@ -9,7 +9,7 @@ import {
 	Overlay,
 } from './styled';
 
-const BackgroundComponent = ({images}) => {
+const Background = ({images}) => {
 
 
 	const renderDiv = (src, alt) => {
@@ -47,8 +47,8 @@ const BackgroundComponent = ({images}) => {
 };
 
 
-BackgroundComponent.propTypes = {
+Background.propTypes = {
 	images: PropTypes.object
 };
 
-export default BackgroundComponent;
+export default Background;

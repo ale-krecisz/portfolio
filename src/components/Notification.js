@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { zIndex, colors, fonts } from 'constants/styleVariables';
 
-const Notification = ({ message }) => {
+const Notification = ({ message, isWarning }) => {
   const [isClosed, setIsClosed] = useState(false);
 
   const closeNotification = () => {
     setIsClosed(true);
   };
 
-  console.log(isClosed);
-
   if (!message) return null;
 
   return (
-    <Container isClosed={isClosed}>
+    <Container isClosed={isClosed} isWarning={isWarning}>
       <Text>{message}</Text>
       <Button onClick={closeNotification} aria-label="discard notification" />
     </Container>
@@ -25,10 +23,11 @@ const Notification = ({ message }) => {
 Notification.propTypes = {
   message: PropTypes.string,
   onClick: PropTypes.func,
+  isWarning: PropTypes.bool,
 };
 
 const Container = styled.div`
-  background-color: ${colors.brandSecond};
+  background-color: ${props => props.isWarning ? colors.red : colors.brandSecond };
   box-shadow: 0 1px 24px -4px rgba(0, 0, 0, 0.2);
   padding: 20px 50px 20px 20px;
   position: fixed;

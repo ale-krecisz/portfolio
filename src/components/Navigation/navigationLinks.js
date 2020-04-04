@@ -4,7 +4,7 @@ import { ReactComponent as Behance } from 'assets/behance.svg';
 import { ReactComponent as Github } from 'assets/github.svg';
 import { ReactComponent as LinkedIn } from 'assets/linkedin.svg';
 
-export const headerLinks = [    
+export const navigationLinks = [    
 	{
 		name: 'About',
 		route: ROUTES.PROFILE

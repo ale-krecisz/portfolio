@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import unsplash from 'api/unsplash';
 
-import Background from 'components/BackgroundComponent/BackgroundComponent';
-import SearchBar from 'components/SearchBarComponent/SearchBarComponent';
-import Loader from 'components/LoaderComponent';
+import Background from 'components/Background/Background';
+import SearchBar from 'components/SearchBar/SearchBar';
+import Loader from 'components/Loader';
 import Paragraph from  'components/typography/Paragraph';
 import CopyContainer from 'components/layout/CopyContainer';
 import Notification from 'components/Notification';
@@ -26,9 +26,7 @@ const HomePage = () => {
 			params: { query: searchValue },
 		}).then(result => {
             setImages(result.data.results);
-            if(images.length < 0) {
                 setMessage('Oh no, we don\'t have what You\'ve been looking for.');
-            }
 			timer = setTimeout(() => {
 				setLoading(false);
 			}, 50);
@@ -52,6 +50,7 @@ const HomePage = () => {
 		<HomeContainer>
 			{ loading && <Loader /> }
 			<Notification 
+				isWarning
 				message={message} />
 			<Background 
 				images={images[randomNumber]}

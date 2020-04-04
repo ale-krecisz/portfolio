@@ -11,7 +11,7 @@ const spin = keyframes`
     }
 `;
 
-const Loader = styled.div`
+const Spinner = styled.div`
     border: 3px solid ${colors.gray.xLight};
     border-top: 3px solid ${colors.brand};
     border-radius: 50%;
@@ -34,10 +34,10 @@ const Container = styled.div`
     left: 0;
 `;
 
-const LoaderComponent = () => (
+const Loader = () => (
 	<Container>
-		<Loader />
+		<Spinner />
 	</Container>
 );
 
-export default LoaderComponent;
+export default Loader;

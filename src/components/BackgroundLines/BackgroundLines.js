@@ -8,7 +8,7 @@ import {
 	VerticalContainer
 } from './styled';
 
-const BackgroundLinesComponent = () => {   
+const BackgroundLines = () => {   
 
 	const renderLines = (number) => {
 		let item = [];
@@ -44,4 +44,4 @@ const BackgroundLinesComponent = () => {
 };
 
 
-export default BackgroundLinesComponent;
+export default BackgroundLines;

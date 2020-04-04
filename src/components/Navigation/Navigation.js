@@ -1,6 +1,6 @@
 import React from 'react';
 import ROUTES from 'constants/route-constants';
-import {headerLinks, socialLinks} from './headerLinks';
+import {navigationLinks, socialLinks} from './navigationLinks';
 
 import {
 	LinksContainer,
@@ -11,7 +11,7 @@ import {
 	SocialLink
 } from './styled';
 
-const HeaderComponent = () => {
+const Navigation = () => {
 
 	return (
 		<Nav>
@@ -19,7 +19,7 @@ const HeaderComponent = () => {
                 ale.krecisz
 			</Logo>
 			<LinksContainer>
-				{headerLinks.map((link) => (
+				{navigationLinks.map((link) => (
 					<NavItem 
 						key={link.name}
 						to={link.route}
@@ -43,4 +43,4 @@ const HeaderComponent = () => {
 	);
 };
 
-export default HeaderComponent;
+export default Navigation;

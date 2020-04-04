@@ -5,7 +5,7 @@ import ROUTES from 'constants/route-constants';
 import GlobalStyle from 'constants/GlobalStyle';
 
 
-import HeaderComponent from 'components/HeaderComponent/HeaderComponent';
+import Navigation from 'components/Navigation/Navigation';
 
 import HomePage from 'pages/HomePage/HomePage';
 import AboutPage from 'pages/AboutPage';
@@ -18,7 +18,7 @@ const App = () => (
 	<BrowserRouter>
 		<>
 			<GlobalStyle />
-			<HeaderComponent />
+			<Navigation />
 
 			<Switch>
 				<Route path={ROUTES.ROOT} exact component={HomePage}/>
