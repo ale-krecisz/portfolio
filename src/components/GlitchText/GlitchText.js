@@ -2,11 +2,11 @@ import React from 'react';
 
 const GlitchText = () => {
 
-	return (
-		<div>
+  return (
+    <div>
             olaola
-		</div>
-	);
+    </div>
+  );
 };
 
 export default GlitchText;

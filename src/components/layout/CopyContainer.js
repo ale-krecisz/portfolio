@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { zIndex } from 'constants/styleVariables';
 
 export default styled.div`

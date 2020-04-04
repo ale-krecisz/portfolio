@@ -6,12 +6,12 @@ import {LayoutContainer} from 'components/layout/Container';
 const ContactPage = () => {
 
 
-	return (
-		<LayoutContainer>
+  return (
+    <LayoutContainer>
       
-		</LayoutContainer>
+    </LayoutContainer>
 
-	);
+  );
 };
 
 export default ContactPage;

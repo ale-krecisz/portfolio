@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
 import { colors, fonts, zIndex } from 'constants/styleVariables';
+import {mediaQuery} from 'constants/mediaQuery';
 
 export const Nav = styled.header`
   height: 100%;
@@ -61,37 +62,54 @@ export const NavItem = styled(MainLink)`
 `;
 
 export const SocialLink = styled.a`
-  background-color: ${colors.gray.xDark};
-  border-radius: 3px;
-  color: ${colors.white};
-  margin-right: 20px;
-  opacity: 0.7;
-  padding: 8px;
-  transition: all 0.35s ease-in-out;
-  transform: rotate(90deg);
-  display: inline-flex;
+    background-color: ${colors.gray.xDark};
+    border-radius: 3px;
+    color: ${colors.white};
+    display: inline-flex;
+    margin: 20px 10px 0;
+    opacity: 0.7;
+    padding: 8px;
+    transition: all 0.35s ease-in-out;
 
-  svg {
-    height: 12px;
-    width: 12px;
-  }
+    svg {
+      height: 12px;
+      width: 12px;
+    }
 
-  &:hover {
-    background-color: ${colors.brandSecond};
-    opacity: 1;
+    &:hover {
+      background-color: ${colors.brandSecond};
+      opacity: 1;
+    }
+
+  ${mediaQuery.medium} {
+    margin: 0 20px 0 0;
+    transform: rotate(90deg);
   }
 `;
 
-export const LinksContainer = styled.div`
-  left: -100px;
-  position: fixed;
-  top: 200px;
-  transform: rotate(-90deg);
+export const Links = styled.div`
+  ${mediaQuery.medium} {
+    left: -100px;
+    position: fixed;
+    top: 200px;
+    transform: rotate(-90deg);
+  }
 `;
 
-export const SocialContainer = styled.div`
-  bottom: 90px;
-  left: -27px;
-  position: fixed;
-  transform: rotate(-90deg);
+export const Socials = styled.div`
+  ${mediaQuery.medium} {
+    bottom: 90px;
+    left: -27px;
+    position: fixed;
+    transform: rotate(-90deg);
+  }
+`;
+
+export const Container = styled.div`
+  background-color: ${colors.white};
+  padding: 40px 20px;
+`;
+
+export const Overlay = styled.div`
+
 `;

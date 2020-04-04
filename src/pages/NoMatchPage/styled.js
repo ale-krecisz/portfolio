@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import {colors, fonts, zIndex} from 'constants/styleVariables';
 import {mediaQuery} from 'constants/mediaQuery';
 import photo from 'assets/404.jpg';

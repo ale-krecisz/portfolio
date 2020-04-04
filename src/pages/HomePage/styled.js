@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import {zIndex, colors} from 'constants/styleVariables';
 import {Container} from 'components/layout/Container';
 

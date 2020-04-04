@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import {fonts, colors} from 'constants/styleVariables';
 
 export default styled.p`

@@ -17,8 +17,24 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'linebreak-style': ['error', 'unix'],
+    "indent": ["error", 2],
+    "react/jsx-filename-extension": [1, { extensions: [".js"] }],
+    "react/jsx-props-no-spreading": ["off"],
+    "no-nested-ternary": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [{
+          "name": "styled-components",
+          "message": "Please import from styled-components/macro."
+        }],
+        "patterns": [
+          "!styled-components/macro"
+        ]
+      }
+    ],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-  },
+
+  }
 };

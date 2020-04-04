@@ -15,20 +15,20 @@ import NoMatchPage from 'pages/NoMatchPage/NoMatchPage';
 
 
 const App = () => (
-	<BrowserRouter>
-		<>
-			<GlobalStyle />
-			<Navigation />
+  <BrowserRouter>
+    <>
+      <GlobalStyle />
+      <Navigation />
 
-			<Switch>
-				<Route path={ROUTES.ROOT} exact component={HomePage}/>
-				<Route path={ROUTES.PROFILE} component={AboutPage} />
-				<Route path={ROUTES.PORTFOLIO} component={PortfolioPage} />
-				<Route path={ROUTES.CONTACT} component={ContactPage} />
-				<Route component={NoMatchPage} />
-			</Switch>
-		</>
-	</BrowserRouter>
+      <Switch>
+        <Route path={ROUTES.ROOT} exact component={HomePage}/>
+        <Route path={ROUTES.PROFILE} component={AboutPage} />
+        <Route path={ROUTES.PORTFOLIO} component={PortfolioPage} />
+        <Route path={ROUTES.CONTACT} component={ContactPage} />
+        <Route component={NoMatchPage} />
+      </Switch>
+    </>
+  </BrowserRouter>
 );
 
 export default App;

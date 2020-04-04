@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled, {keyframes} from 'styled-components/macro';
 import {colors, zIndex} from 'constants/styleVariables';
 
 const spin = keyframes`
@@ -35,9 +35,9 @@ const Container = styled.div`
 `;
 
 const Loader = () => (
-	<Container>
-		<Spinner />
-	</Container>
+  <Container>
+    <Spinner />
+  </Container>
 );
 
 export default Loader;

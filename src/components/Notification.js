@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { zIndex, colors, fonts } from 'constants/styleVariables';
 
 const Notification = ({ message, isWarning }) => {
@@ -57,7 +57,7 @@ const Button = styled.button`
   height: 30px;
   width: 30px;
   border: none;
-  background: transparent;
+  background-color: transparent;
   position: absolute;
   display: flex;
   right: 20px;

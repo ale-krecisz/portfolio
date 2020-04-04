@@ -5,39 +5,39 @@ import PropTypes from 'prop-types';
 import Button from 'components/Button';
 
 import {
-	Form,
-	Input,
+  Form,
+  Input,
 } from './styled';
 
 const SearchBar = ({onSubmit}) => {
-	const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState('');
 
-	const handleOnChange = (e) => {
-		setSearchValue(e.target.value);
-	};
+  const handleOnChange = (e) => {
+    setSearchValue(e.target.value);
+  };
 
-	const onSearchSubmit = (e) => {
-		e.preventDefault();
-		onSubmit(searchValue);
-	};
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(searchValue);
+  };
 
-	return (
-		<Form onSubmit={onSearchSubmit}>
-			<Input 
-				type="text"
-				onChange={handleOnChange}
-				placeholder='Do You wanna try?'
-				value={searchValue}
-			/>
-			<Button color={true} as='button' type='submit'>
+  return (
+    <Form onSubmit={onSearchSubmit}>
+      <Input 
+        type="text"
+        onChange={handleOnChange}
+        placeholder='Do You wanna try?'
+        value={searchValue}
+      />
+      <Button color={true} as='button' type='submit'>
 				Let&apos;s try!
-			</Button>
-		</Form>
-	);
+      </Button>
+    </Form>
+  );
 };
 
 SearchBar.propTypes = {
-	onSubmit: PropTypes.func
+  onSubmit: PropTypes.func
 };
 
 export default SearchBar;

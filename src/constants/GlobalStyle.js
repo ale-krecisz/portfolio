@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components/macro';
 import {colors, fonts} from './styleVariables';
 
 export default createGlobalStyle`
