@@ -1,5 +1,5 @@
 import React from 'react';
-import pic from 'assets/default-slide.jpg';
+import pic from 'assets/1.jpg';
 import { Stage, Sprite } from '@inlet/react-pixi';
 
 

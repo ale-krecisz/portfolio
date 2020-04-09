@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ROUTES from 'constants/route-constants';
 import {navigationLinks, socialLinks} from './navigationLinks';
 
@@ -6,6 +6,7 @@ import {
   Container,
   Links,
   Logo,
+  MenuButton,
   Nav, 
   NavItem,
   Overlay,
@@ -14,15 +15,33 @@ import {
 } from './styled';
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const disableBodyScroll = () => {
+    isMenuOpen
+      ? document.body.classList.add('body-scroll')
+      : document.body.classList.remove('body-scroll');
+  };
+
+  useEffect(() => {
+    disableBodyScroll();
+
+    return () => disableBodyScroll(false);
+  }, [isMenuOpen, disableBodyScroll]);
+
+  const handleOpen = () => {
+    setIsMenuOpen(isMenuOpen => !isMenuOpen);
+  };
 
   return (
     <>
-      <Overlay />
+      <Overlay isMenuOpen={isMenuOpen} onClick={handleOpen}/>
       <Nav>
+        <MenuButton onClick={handleOpen} isMenuOpen={isMenuOpen}/>
         <Logo to={ROUTES.ROOT}>
-                    ale.krecisz
+          ale.krecisz
         </Logo>
-        <Container>
+        <Container isMenuOpen={isMenuOpen}>
           <Links>
             {navigationLinks.map((link) => (
               <NavItem 

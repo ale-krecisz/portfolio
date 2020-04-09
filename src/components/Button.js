@@ -23,8 +23,8 @@ Button.defaultProps = {
 };
 
 const Container = styled(Link)`
-  display: inline-flex;
   align-items: center;
+  display: inline-flex;
   justify-content: center;
   text-decoration: none;
   position: relative;
@@ -35,7 +35,6 @@ const Container = styled(Link)`
   min-width: 160px;
   margin-top: 40px;
   padding: 17px 40px;
-  border: none;
 
   &::after,
   &::before {
@@ -116,20 +115,8 @@ const Container = styled(Link)`
     props.color &&
     css`
       transition: all 0.15s ease-in-out;
-      background-color: ${colors.brandSecond};
+      background-color: rgba(0, 0, 0, 0.4);
       color: ${colors.white};
-
-      &::after,
-      &::before {
-        width: 2px;
-      }
-
-      span {
-        &::after,
-        &::before {
-          height: 2px;
-        }
-      }
 
       &::after,
       &::before,
@@ -139,7 +126,7 @@ const Container = styled(Link)`
       }
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: ${colors.brandSecond};
       }
     `};
 `;

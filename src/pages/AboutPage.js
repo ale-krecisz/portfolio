@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import pic from 'assets/default-slide.jpg';
-
 import Bunny from 'components/Bunny.js';
 import Paragraph from  'components/typography/Paragraph';
 

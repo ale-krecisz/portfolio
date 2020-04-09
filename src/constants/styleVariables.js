@@ -16,6 +16,7 @@ export const colors = {
 export const zIndex = {
   background: -1,
   content: 1,
+  overlay: 7,
   navigation: 8,
   modalOverflow: 9,
   modal: 10,
