@@ -1,5 +1,4 @@
 import React from 'react';
-import defaultSlide from 'assets/1.jpg';
 import PropTypes from 'prop-types';
 
 import {
@@ -9,7 +8,7 @@ import {
   Overlay,
 } from './styled';
 
-const Background = ({images}) => {
+const Background = ({src, alt}) => {
 
   const renderDiv = (src, alt) => {
     let item = [];
@@ -30,16 +29,7 @@ const Background = ({images}) => {
         
   return (
     <Container>
-      {images !== undefined ? ( 
-        renderDiv(
-          images.urls.regular, 
-          images.alt_description
-        )) : (
-        renderDiv(
-          defaultSlide,
-          'Hello! It\'s me!'
-        )
-      )}
+      {renderDiv(src, alt) }
       <Overlay />
     </Container>
   );
@@ -47,7 +37,8 @@ const Background = ({images}) => {
 
 
 Background.propTypes = {
-  images: PropTypes.object
+  src: PropTypes.string,
+  alt: PropTypes.string,
 };
 
 export default Background;

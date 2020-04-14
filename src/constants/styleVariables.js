@@ -7,6 +7,7 @@ export const colors = {
     mid: '#b6b6b6',
     dark: '#7a7a7a',
     xDark: '#1a1a1a',
+    transparent: 'rgba(255, 255, 255, 0.3)',
   },
   black: '#000',
   white: '#fff',
@@ -16,7 +17,9 @@ export const colors = {
 export const zIndex = {
   background: -1,
   content: 1,
-  overlay: 7,
+  overlay: 2,
+  loader: 3,
+  spinner: 4,
   navigation: 8,
   modalOverflow: 9,
   modal: 10,

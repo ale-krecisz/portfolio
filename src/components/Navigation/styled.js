@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components/macro';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { colors, fonts, zIndex } from 'constants/styleVariables';
-import { mediaQuery } from 'constants/mediaQuery';
+import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
 
 export const Nav = styled.header`
   display: flex;
@@ -116,9 +116,13 @@ export const Links = styled.div`
   ${mediaQuery.medium} {
     flex-direction: row;
     left: -100px;
-    position: fixed;
+    position: absolute;
     top: 200px;
     transform: rotate(-90deg);
+  }
+
+  ${mediaQueryHeight.medium} {
+    top: 150px;
   }
 `;
 
@@ -127,8 +131,12 @@ export const Socials = styled.div`
     bottom: 90px;
     display: flex;
     left: -27px;
-    position: fixed;
+    position: absolute;
     transform: rotate(-90deg);
+  }
+
+  ${mediaQueryHeight.medium} {
+    bottom: 120px;
   }
 `;
 
@@ -140,7 +148,7 @@ export const Container = styled.div`
   padding: 60px 20px 30px;
   transform: translateX(100%);
   transition: transform 0.4s ease-in-out;
-    
+
   ${(props) => props.isMenuOpen
     && css`
       transform: translateX(0);
@@ -150,6 +158,7 @@ export const Container = styled.div`
     background-color: transparent;
     height: 100%;
     padding: 0;
+    min-height: 540px;
   }
 `;
 
@@ -179,7 +188,7 @@ const Button = ({ isMobileMenuOpen, ...props }) => (
 );
 
 Button.propTypes = {
-  isMobileMenuOpen: PropTypes.bool.isRequired,
+  isMobileMenuOpen: PropTypes.bool,
 };
 
 export const MenuButton = styled(Button)`

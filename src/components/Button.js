@@ -22,7 +22,7 @@ Button.defaultProps = {
   as: Link,
 };
 
-const Container = styled(Link)`
+export const Container = styled(Link)`
   align-items: center;
   display: inline-flex;
   justify-content: center;
@@ -33,7 +33,6 @@ const Container = styled(Link)`
   font-weight: 500;
   font-size: ${fonts.size.small};
   min-width: 160px;
-  margin-top: 40px;
   padding: 17px 40px;
 
   &::after,

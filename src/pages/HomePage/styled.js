@@ -4,6 +4,8 @@ import {Container} from 'components/layout/Container';
 
 export const HomeContainer = styled(Container)`
   justify-content: center;
+  z-index: ${zIndex.content};
+  position: relative;
 `;
 
 export const MainTitle = styled.h1`

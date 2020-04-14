@@ -1,8 +1,11 @@
 import React from 'react';
-import { Field, useField } from 'formik';
+import { useField } from 'formik';
 import PropTypes from 'prop-types';
 
-import {Label, Error} from './styled';
+import { 
+  Label,
+  Error,Input
+} from './styled';
 
 const InputField = ({
   name,
@@ -18,7 +21,7 @@ const InputField = ({
   return (
     <Label>
       {label}
-      <Field
+      <Input
         type={type}
         id={name}
         name={name}
