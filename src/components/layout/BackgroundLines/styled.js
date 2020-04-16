@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { colors, zIndex } from 'constants/styleVariables';
+import { colors } from 'constants/styleVariables';
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,6 @@ export const Container = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: ${zIndex.background};
 `;
 
 export const Line = styled.div`

@@ -3,6 +3,7 @@ const media = {
   small: '798px',
   medium: '1024px',
   large: '1440px',
+  xlarge: '1700px',
 };
 
 export const mediaQuery = {

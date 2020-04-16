@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
-import {colors, fonts, zIndex} from 'constants/styleVariables';
-import {mediaQuery} from 'constants/mediaQuery';
+import { colors, fonts, zIndex } from 'constants/styleVariables';
+import { mediaQuery } from 'constants/mediaQuery';
 import photo from 'assets/404.jpg';
 
 export const TextContainer = styled.div`
@@ -8,18 +8,19 @@ export const TextContainer = styled.div`
 `;
 
 export const Text = styled.h1`
-  font-size: ${fonts.size.xLarge};
   color: ${colors.brandSecond};
-  text-transform: uppercase;
+  font-size: ${fonts.size.xLarge};
+  font-weight: ${fonts.weight.bold};
   letter-spacing: 6px;
-  z-index: ${zIndex.content};
   line-height: 1;
+  margin-bottom: 40px;
   max-width: 400px;
-  font-weight: 800;
+  text-transform: uppercase;
+  z-index: ${zIndex.content};
 
   ${mediaQuery.medium} {
     font-size: ${fonts.size.xxLarge};
-    line-height: .85;
+    line-height: 0.85;
   }
 `;
 
@@ -54,11 +55,12 @@ export const Container = styled.section`
   position: relative;
 
   ${mediaQuery.large} {
-    &::before, &::after {
+    &::before,
+    &::after {
       content: '';
-      width: 40px; 
-      height: 40px; 
-      border: 1px solid ${colors.brand};
+      width: 40px;
+      height: 40px;
+      border: 2px solid ${colors.brand};
       border-left: 0;
       border-bottom-width: 0;
       position: fixed;
@@ -71,7 +73,7 @@ export const Container = styled.section`
       bottom: 20px;
       right: 20px;
       border-top: 0;
-      border-bottom-width: 1px;
+      border-bottom-width: 2px;
     }
   }
 

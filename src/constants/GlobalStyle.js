@@ -18,7 +18,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${colors.brandSecond};
+    background-color: ${colors.brand};
 
     &.scroll-lock {
       overflow: hidden;

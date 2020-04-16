@@ -5,20 +5,23 @@ import { NavLink } from 'react-router-dom';
 import { colors, fonts, zIndex } from 'constants/styleVariables';
 import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
 
+import { Container as ButtonContainer } from 'components/Button';
+
 export const Nav = styled.header`
   display: flex;
   height: 100%;
   flex-direction: column;
   right: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: ${zIndex.navigation};
- 
+
   ${mediaQuery.medium} {
     left: 0;
     right: auto;
     width: auto;
+    position: fixed;
   }
 `;
 
@@ -26,6 +29,7 @@ const MainLink = styled(NavLink).attrs({
   exact: true,
 })`
   color: ${colors.gray.xDark};
+  font-size: ${fonts.size.small};
   position: relative;
 
   &::after {
@@ -55,32 +59,12 @@ const MainLink = styled(NavLink).attrs({
   }
 `;
 
-export const Logo = styled(MainLink)`
-  color: ${colors.white};
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
-  font-size: ${fonts.size.medium};
-  left: 20px;
-  top: 10px;
-  padding: 10px 5px;
-  position: absolute;
-
-  &::after {
-    display: none;
-  }
-
-  ${mediaQuery.medium} {
-    left: 32px;
-    top: 10px;
-  }
-`;
-
 export const NavItem = styled(MainLink)`
-  font-size: ${fonts.size.small};
   letter-spacing: 3px;
   margin-right: 30px;
   padding: 10px 0 10px 5px;
   text-transform: lowercase;
-  font-weight: 300;
+  font-weight: ${fonts.weight.light};
 `;
 
 export const SocialLink = styled.a`
@@ -117,12 +101,12 @@ export const Links = styled.div`
     flex-direction: row;
     left: -100px;
     position: absolute;
-    top: 200px;
+    top: 220px;
     transform: rotate(-90deg);
   }
 
   ${mediaQueryHeight.medium} {
-    top: 150px;
+    top: 170px;
   }
 `;
 
@@ -143,16 +127,17 @@ export const Socials = styled.div`
 export const Container = styled.div`
   background-color: ${colors.white};
   border-bottom-left-radius: 2px;
-  box-shadow: -5px 5px 14px 1px rgba(0,0,0,0.3);
+  box-shadow: -5px 5px 14px 1px rgba(0, 0, 0, 0.3);
   margin-left: auto;
   padding: 60px 20px 30px;
   transform: translateX(100%);
   transition: transform 0.4s ease-in-out;
 
-  ${(props) => props.isMenuOpen
-    && css`
+  ${props =>
+    props.isMenuOpen &&
+    css`
       transform: translateX(0);
-  `};
+    `};
 
   ${mediaQuery.medium} {
     background-color: transparent;
@@ -165,7 +150,7 @@ export const Container = styled.div`
 export const Overlay = styled.div`
   background-color: ${colors.gray.xDark};
   bottom: 0;
-  display: ${props => props.isMenuOpen ? 'block' : 'none'};
+  display: ${props => (props.isMenuOpen ? 'block' : 'none')};
   left: 0;
   opacity: 0.7;
   position: fixed;
@@ -175,7 +160,7 @@ export const Overlay = styled.div`
   z-index: ${zIndex.overlay};
 
   ${mediaQuery.medium} {
-    display: none;    
+    display: none;
   }
 `;
 
@@ -184,7 +169,7 @@ const Button = ({ isMobileMenuOpen, ...props }) => (
     <span />
     <span />
     <span />
-  </button >
+  </button>
 );
 
 Button.propTypes = {
@@ -193,14 +178,12 @@ Button.propTypes = {
 
 export const MenuButton = styled(Button)`
   align-items: center;
-  background-color: rgba(0,0,0,0.1);
-  box-shadow: 0 0 30px 30px rgba(0,0,0,0.1);
   border-radius: 2px;
   display: flex;
   height: 40px;
   right: 10px;
-  position: absolute;
-  top: 10px;
+  position: fixed;
+  top: 20px;
   width: 50px;
   z-index: ${zIndex.navigation};
 
@@ -222,11 +205,11 @@ export const MenuButton = styled(Button)`
       top: calc(50% + 8px);
     }
   }
-  
-  ${(props) => props.isMenuOpen
-    && css`
+
+  ${props =>
+    props.isMenuOpen &&
+    css`
       background-color: transparent;
-      box-shadow: none;
 
       span {
         background-color: ${colors.gray.mid};
@@ -249,5 +232,63 @@ export const MenuButton = styled(Button)`
 
   ${mediaQuery.medium} {
     display: none;
+  }
+`;
+
+export const Logo = styled(MainLink)`
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
+  left: 20px;
+  top: 15px;
+  padding: 6px;
+  position: absolute;
+  border: 2px solid ${colors.brand};
+  transition: all 0.25s ease-in-out, overflow;
+  letter-spacing: 1px;
+
+  ${ButtonContainer} {
+    padding: 8px 10px;
+    min-width: 60px;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:hover {
+    background-color: ${colors.brand};
+    overflow: hidden;
+
+    ${ButtonContainer} {
+      color: ${colors.white};
+
+      &::after,
+      span::after {
+        right: 0;
+        bottom: 0;
+      }
+
+      &::before,
+      span::before {
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  ${mediaQuery.medium} {
+    left: 32px;
+    top: 20px;
+
+    ${ButtonContainer} {
+      padding: 10px 16px;
+    }
+  }
+
+  ${mediaQueryHeight.medium} {
+    top: 10px;
+
+    ${ButtonContainer} {
+      padding: 8px 10px;
+    }
   }
 `;

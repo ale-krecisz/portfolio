@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import unsplash from 'api/unsplash';
-import useNotification from 'context/notifications/useNotification';
+import useErrorHandler from 'context/notifications/useErrorHandler';
 
 import defaultSlide from 'assets/1.jpg';
 
 import Background from 'components/Background/Background';
 import SearchBar from 'components/SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
-import Paragraph from 'components/typography/Paragraph';
-import CopyContainer from 'components/layout/CopyContainer';
+import { Paragraph, Highlight } from 'components/layout';
 
-import { HomeContainer, MainTitle, Highlight } from './styled';
-import useErrorHandler from '../../context/notifications/useErrorHandler';
+import { HomeCopyContainer, HomeContainer, MainTitle, Note } from './styled';
 
 let timer;
 
@@ -26,27 +24,21 @@ const defaultSet = [
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [images, setImages] = useState([]);
   const [searchValue, setSearchValue] = useState('forest');
-  const [randomNumber, setRandomNumber] = useState(2);
+  const [singleImage, setSingleImage] = useState(defaultSet[0]);
 
-  const { createNotification } = useNotification();
   const handleError = useErrorHandler();
 
   const getData = useCallback(async () => {
     setIsLoading(true);
+
     await unsplash
-      .get('/search/photossd', {
+      .get('/search/photos', {
         params: { query: searchValue },
       })
       .then(result => {
-        setImages(result.data.results);
-        setRandomNumber(Math.floor(Math.random() * 10));
-
-        createNotification({
-          type: 'success',
-          message: 'message',
-        });
+        const randomNumber = Math.floor(Math.random() * 10);
+        setSingleImage(result.data.results[randomNumber]);
 
         timer = setTimeout(() => {
           setIsLoading(false);
@@ -54,15 +46,13 @@ const HomePage = () => {
       })
       .catch(error => {
         handleError(error);
-        handleError(error);
-        handleError(error);
 
         timer = setTimeout(() => {
           setIsLoading(false);
         }, 1500);
       });
     return () => clearTimeout(timer);
-  }, [searchValue]);
+  }, [searchValue, handleError]);
 
   useEffect(() => {
     getData();
@@ -72,8 +62,6 @@ const HomePage = () => {
     setSearchValue(searchValue);
   };
 
-  const singleImage = images[randomNumber];
-
   return (
     <>
       {isLoading && <Loader />}
@@ -81,11 +69,16 @@ const HomePage = () => {
         {singleImage && singleImage.urls ? (
           <Background src={singleImage.urls.regular} alt={singleImage.alt_desciption} />
         ) : (
-          <Background src={defaultSet[0].urls.regular} alt={defaultSet[0].alt_desciption} />
+          <>
+            <Note>We don&apos;t have what You&apos;re looking for. Try again! </Note>
+            <Background src={defaultSet[0].urls.regular} alt={defaultSet[0].alt_desciption} />
+          </>
         )}
 
-        <MainTitle>Co tam?</MainTitle>
-        <CopyContainer>
+        <HomeCopyContainer>
+          <MainTitle>
+            Co tam <Highlight>?</Highlight>
+          </MainTitle>
           <Paragraph>
             <strong>
               I&apos;m Aleksandra, a Warsaw based front-end developer with designing background.
@@ -96,11 +89,8 @@ const HomePage = () => {
             apps to design, print and UX, but whatever I do, I always take a human-centered approach
             and a keen eye for detail.
             <br />
-            <br /> I get inspired by nature, traveling and people. I like minimalism and simplicity,
-            but I get that people need a bit of craziness in their lives. I&apos;m a big typography
-            lover and I&apos;m into minimal design. I aim for a high quality, polished product to
-            achieve my clients goals. Let&apos;s get in touch whenever You want to talk with me,
-            employ me or tell me a joke.
+            <br />
+            Let&apos;s get in touch whenever You want to talk with me, employ me or tell me a joke.
             <br />
             <br />
             <strong>
@@ -108,7 +98,7 @@ const HomePage = () => {
             </strong>
           </Paragraph>
           <SearchBar onSubmit={onSearchSubmit} />
-        </CopyContainer>
+        </HomeCopyContainer>
       </HomeContainer>
     </>
   );

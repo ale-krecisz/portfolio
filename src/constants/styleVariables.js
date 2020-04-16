@@ -1,5 +1,5 @@
 export const colors = {
-  brand: '#17adb5',
+  brand: '#f1a2b5',
   brandSecond: '#fdc22a',
   gray: {
     xLight: '#f8f8f8',
@@ -11,11 +11,13 @@ export const colors = {
   },
   black: '#000',
   white: '#fff',
-  red: '#8b0101',
+  red: {
+    default: '#c10000',
+    dark: '#8b0101',
+  },
 };
 
 export const zIndex = {
-  background: -1,
   content: 1,
   overlay: 2,
   loader: 3,
@@ -34,5 +36,11 @@ export const fonts = {
     large: '24px',
     xLarge: '60px',
     xxLarge: '160px',
+  },
+  weight: {
+    light: 200,
+    regular: 400,
+    semibold: 700,
+    bold: 800,
   },
 };

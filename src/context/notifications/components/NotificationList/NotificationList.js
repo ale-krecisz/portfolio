@@ -3,19 +3,19 @@ import React from 'react';
 import useNotification from '../../useNotification';
 import NotificationItem from '../NotificationItem/NotificationItem';
 
+import { List } from './styled';
+
 const NotificationList = () => {
   const { notifications } = useNotification();
 
   if (!notifications.length) return null;
 
   return (
-    <ul>
+    <List>
       {notifications.map(notification => (
-        <li key={notification.id}>
-          <NotificationItem notification={notification} />
-        </li>
+        <NotificationItem notification={notification} key={notification.id} />
       ))}
-    </ul>
+    </List>
   );
 };
 

@@ -1,27 +1,28 @@
 import styled, { css } from 'styled-components/macro';
 import { zIndex, colors, fonts } from 'constants/styleVariables';
 
-export const Container = styled.li`
-  background-color: ${props => (props.type === 'notification' ? colors.brandSecond : colors.red)};
+export const Notification = styled.li`
+  background-color: ${props =>
+    props.type === 'notification' ? colors.brandSecond : colors.red.dark};
   box-shadow: 0 1px 24px -4px rgba(0, 0, 0, 0.2);
   color: ${props => (props.type === 'notification' ? colors.white : colors.white)};
   font-size: ${fonts.size.medium};
-  font-weight: 500;
+  font-weight: ${fonts.weight.regular};
   text-align: center;
   padding: 20px 50px 20px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  z-index: ${zIndex.modalOverflow};
+  z-index: ${zIndex.modal};
   display: flex;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
   justify-content: center;
-  transition: transform 0.6s ease-in-out;
 
   ${props =>
     props.isClosed &&
     css`
       transform: translateY(-200px);
+      opacity: 0;
+      z-index: calc(${zIndex.modal} - 1);
     `}
 `;
 
@@ -51,8 +52,4 @@ export const Button = styled.button`
   &::after {
     transform: translateY(-50%) rotate(45deg);
   }
-`;
-
-export const List = styled.ul`
-  list-style: none;
 `;

@@ -9,7 +9,6 @@ import Navigation from 'components/Navigation/Navigation';
 import HomePage from 'pages/HomePage/HomePage';
 import AboutPage from 'pages/AboutPage';
 import ContactPage from 'pages/ContactPage';
-import PortfolioPage from 'pages/PortfolioPage';
 import NoMatchPage from 'pages/NoMatchPage/NoMatchPage';
 
 const App = () => (
@@ -21,7 +20,6 @@ const App = () => (
         <Switch>
           <Route path={ROUTES.ROOT} exact component={HomePage} />
           <Route path={ROUTES.PROFILE} component={AboutPage} />
-          <Route path={ROUTES.PORTFOLIO} component={PortfolioPage} />
           <Route path={ROUTES.CONTACT} component={ContactPage} />
           <Route component={NoMatchPage} />
         </Switch>

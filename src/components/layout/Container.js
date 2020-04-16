@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import {colors} from 'constants/styleVariables';
+import { colors } from 'constants/styleVariables';
+
 import PropTypes from 'prop-types';
 
 import BackgroundLines from '../BackgroundLines/BackgroundLines';
 
 export const Container = styled.section`
-  width: 100%;
-  height: 100vh;
-  min-height: 800px;
+  background-color: ${colors.white};
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   position: relative;
-  background-color: ${colors.white};
+  width: 100%;
 `;
 
 export const Main = styled.div`
@@ -22,11 +22,10 @@ export const Main = styled.div`
   position: relative;
 `;
 
-export const LayoutContainer = ({children}) => (
+export const LayoutContainer = ({ children }) => (
   <Container>
     <BackgroundLines />
-    <Main>{children}
-    </Main>
+    <Main>{children}</Main>
   </Container>
 );
 

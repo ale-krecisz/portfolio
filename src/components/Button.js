@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -30,10 +30,10 @@ export const Container = styled(Link)`
   position: relative;
   transition: all 0.15s ease-in-out 0.25s;
   color: ${colors.brand};
-  font-weight: 500;
+  font-weight: ${fonts.weight.regular};
   font-size: ${fonts.size.small};
   min-width: 160px;
-  padding: 17px 40px;
+  padding: 17px 30px;
 
   &::after,
   &::before {
@@ -42,7 +42,7 @@ export const Container = styled(Link)`
     left: 0;
     height: 100%;
     background-color: ${colors.brand};
-    width: 1px;
+    width: 2px;
     position: absolute;
     transition: all 0.2s ease-in-out;
   }
@@ -67,7 +67,7 @@ export const Container = styled(Link)`
       content: '';
       left: -18px;
       top: 0;
-      height: 1px;
+      height: 2px;
       background-color: ${colors.brand};
       width: 100%;
       position: absolute;
@@ -84,6 +84,7 @@ export const Container = styled(Link)`
 
   &:hover {
     color: ${colors.white};
+    background-color: ${colors.brand};
 
     &::after,
     &::before {
@@ -109,25 +110,6 @@ export const Container = styled(Link)`
       top: 0;
     }
   }
-
-  ${(props) =>
-    props.color &&
-    css`
-      transition: all 0.15s ease-in-out;
-      background-color: rgba(0, 0, 0, 0.4);
-      color: ${colors.white};
-
-      &::after,
-      &::before,
-      span::before,
-      span::after {
-        background-color: ${colors.brandSecond};
-      }
-
-      &:hover {
-        background-color: ${colors.brandSecond};
-      }
-    `};
 `;
 
 export default Button;

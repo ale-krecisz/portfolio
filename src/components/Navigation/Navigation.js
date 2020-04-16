@@ -1,33 +1,35 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ROUTES from 'constants/route-constants';
-import {navigationLinks, socialLinks} from './navigationLinks';
+import Button from 'components/Button';
+
+import { navigationLinks, socialLinks } from './navigationLinks';
 
 import {
   Container,
   Links,
   Logo,
   MenuButton,
-  Nav, 
+  Nav,
   NavItem,
   Overlay,
   Socials,
-  SocialLink
+  SocialLink,
 } from './styled';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const disableBodyScroll = () => {
-    isMenuOpen
-      ? document.body.classList.add('body-scroll')
-      : document.body.classList.remove('body-scroll');
-  };
-
   useEffect(() => {
+    const disableBodyScroll = () => {
+      isMenuOpen
+        ? document.body.classList.add('body-scroll')
+        : document.body.classList.remove('body-scroll');
+    };
+
     disableBodyScroll();
 
     return () => disableBodyScroll(false);
-  }, [isMenuOpen, disableBodyScroll]);
+  }, [isMenuOpen]);
 
   const handleOpen = () => {
     setIsMenuOpen(isMenuOpen => !isMenuOpen);
@@ -35,30 +37,23 @@ const Navigation = () => {
 
   return (
     <>
-      <Overlay isMenuOpen={isMenuOpen} onClick={handleOpen}/>
+      <Overlay isMenuOpen={isMenuOpen} onClick={handleOpen} />
       <Nav>
-        <MenuButton onClick={handleOpen} isMenuOpen={isMenuOpen}/>
+        <MenuButton onClick={handleOpen} isMenuOpen={isMenuOpen} />
         <Logo to={ROUTES.ROOT}>
-          ale.krecisz
+          <Button to={ROUTES.ROOT}>ale.krecisz</Button>
         </Logo>
         <Container isMenuOpen={isMenuOpen}>
           <Links>
-            {navigationLinks.map((link) => (
-              <NavItem 
-                key={link.name}
-                to={link.route}
-              >
+            {navigationLinks.map(link => (
+              <NavItem key={link.name} to={link.route}>
                 {link.name}
               </NavItem>
             ))}
           </Links>
           <Socials>
-            {socialLinks.map((link) => (
-              <SocialLink 
-                key={link.name}
-                href={link.link}
-                target="_blank"
-              >
+            {socialLinks.map(link => (
+              <SocialLink key={link.name} href={link.link} target="_blank">
                 {link.icon}
               </SocialLink>
             ))}
