@@ -18,6 +18,7 @@ export const colors = {
 };
 
 export const zIndex = {
+  lowest: -1,
   content: 1,
   overlay: 2,
   loader: 3,
@@ -28,7 +29,7 @@ export const zIndex = {
 };
 
 export const fonts = {
-  family: '\'Fira Sans Extra Condensed\', cursive',
+  family: "'Fira Sans Extra Condensed', cursive",
   size: {
     extraSmall: '12px',
     small: '14px',

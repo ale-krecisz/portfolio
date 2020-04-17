@@ -16,7 +16,8 @@
     "react-scripts": "^3.4.0",
     "smooth-scrollbar": "^8.5.0",
     "styled-components": "^4.4.0",
-    "styled-components.macro": "^1.0.0"
+    "styled-components.macro": "^1.0.0",
+    "yup": "^0.28.3"
   },
   "scripts": {
     "start": "react-scripts start",

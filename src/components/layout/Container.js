@@ -4,7 +4,7 @@ import { colors } from 'constants/styleVariables';
 
 import PropTypes from 'prop-types';
 
-import BackgroundLines from '../BackgroundLines/BackgroundLines';
+import BackgroundLines from './BackgroundLines/BackgroundLines';
 
 export const Container = styled.section`
   background-color: ${colors.white};

@@ -4,15 +4,19 @@ import { Field } from 'formik';
 
 export const Error = styled.p`
   position: absolute;
-  font-weight: ${fonts.weight.light};
+  font-weight: ${fonts.weight.regular};
   color: ${colors.red.default};
-  bottom: 0;
+  bottom: 5px;
 `;
 
 export const Label = styled.div`
   margin-bottom: 10px;
   position: relative;
   padding-bottom: 25px;
+
+  textarea {
+    height: 100px;
+  }
 `;
 
 export const Input = styled(Field)`
@@ -27,7 +31,7 @@ export const Input = styled(Field)`
   margin-bottom: 4px;
   max-width: 450px;
   outline: none;
-  padding: 0 20px;
+  padding: 15px 20px;
   width: 100%;
 
   ::placeholder {

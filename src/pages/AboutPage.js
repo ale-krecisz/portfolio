@@ -12,7 +12,7 @@ const AboutPage = () => {
         </MainTitle>
         <Paragraph>
           <strong>
-            I&apos;m Aleksandra, a <Highlight>Warsaw</Highlight> based front-end developer with
+            I&apos;m Aleksandra, a <Highlight>Warsaw based front-end developer</Highlight> with
             designing background.
           </strong>
           <br />
@@ -24,7 +24,7 @@ const AboutPage = () => {
           <br /> I get inspired by nature, traveling and people. I like minimalism and simplicity,
           but I get that people need a bit of craziness in their lives. I&apos;m a big typography
           lover and I&apos;m into minimal design. I aim for a high quality, polished product to
-          achieve my clients goals. Let&apos;s get in touch whenever You want to talk with me,
+          achieve my clients goals. Let&apos;s get in touch whenever you want to talk with me,
           employ me or tell me a joke.
           <br />
           <br />

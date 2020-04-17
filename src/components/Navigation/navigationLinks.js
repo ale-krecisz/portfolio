@@ -4,31 +4,31 @@ import { ReactComponent as Behance } from 'assets/behance.svg';
 import { ReactComponent as Github } from 'assets/github.svg';
 import { ReactComponent as LinkedIn } from 'assets/linkedin.svg';
 
-export const navigationLinks = [    
+export const navigationLinks = [
   {
     name: 'About',
-    route: ROUTES.PROFILE
-  }, {
-    name: 'Portfolio',
-    route: ROUTES.PORTFOLIO
-  }, {
+    route: ROUTES.PROFILE,
+  },
+  {
     name: 'Contact',
-    route: ROUTES.CONTACT
+    route: ROUTES.CONTACT,
   },
 ];
 
-export const socialLinks = [    
+export const socialLinks = [
   {
     name: 'GitHub',
     link: 'https://github.com/ale-krecisz',
-    icon: <Github />
-  }, {
+    icon: <Github />,
+  },
+  {
     name: 'Behance',
     link: 'https://www.behance.net/ale-krecisz',
-    icon: <Behance />
-  }, {
+    icon: <Behance />,
+  },
+  {
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/aleksandra-kr%C4%99cisz-b3205a107/',
-    icon: <LinkedIn />
+    icon: <LinkedIn />,
   },
 ];

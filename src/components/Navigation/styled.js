@@ -8,6 +8,7 @@ import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
 import { Container as ButtonContainer } from 'components/Button';
 
 export const Nav = styled.header`
+  color: ${colors.gray.xDark};
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -28,7 +29,6 @@ export const Nav = styled.header`
 const MainLink = styled(NavLink).attrs({
   exact: true,
 })`
-  color: ${colors.gray.xDark};
   font-size: ${fonts.size.small};
   position: relative;
 
@@ -43,7 +43,7 @@ const MainLink = styled(NavLink).attrs({
     transform-origin: left;
     transition: transform 0.3s ease-in-out;
     width: 100%;
-    z-index: ${zIndex.background};
+    z-index: ${zIndex.lowest};
   }
 
   &.active,
@@ -54,8 +54,9 @@ const MainLink = styled(NavLink).attrs({
   }
 
   ${mediaQuery.medium} {
-    color: ${colors.white};
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
+    color: ${props => (props.isDark ? colors.gray.dark : colors.white)};
+    text-shadow: ${props => (props.isDark ? 'none' : '1px 1px 1px rgba(0, 0, 0, 0.45)')};
+    font-weight: ${props => (props.isDark ? fonts.weight.normal : fonts.weight.light)};
   }
 `;
 
@@ -64,7 +65,6 @@ export const NavItem = styled(MainLink)`
   margin-right: 30px;
   padding: 10px 0 10px 5px;
   text-transform: lowercase;
-  font-weight: ${fonts.weight.light};
 `;
 
 export const SocialLink = styled.a`
@@ -99,14 +99,10 @@ export const Links = styled.div`
 
   ${mediaQuery.medium} {
     flex-direction: row;
-    left: -100px;
+    left: -45px;
     position: absolute;
-    top: 220px;
+    top: 180px;
     transform: rotate(-90deg);
-  }
-
-  ${mediaQueryHeight.medium} {
-    top: 170px;
   }
 `;
 
@@ -236,7 +232,6 @@ export const MenuButton = styled(Button)`
 `;
 
 export const Logo = styled(MainLink)`
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
   left: 20px;
   top: 15px;
   padding: 6px;
@@ -277,7 +272,7 @@ export const Logo = styled(MainLink)`
 
   ${mediaQuery.medium} {
     left: 32px;
-    top: 20px;
+    top: 24px;
 
     ${ButtonContainer} {
       padding: 10px 16px;
@@ -285,7 +280,7 @@ export const Logo = styled(MainLink)`
   }
 
   ${mediaQueryHeight.medium} {
-    top: 10px;
+    top: 15px;
 
     ${ButtonContainer} {
       padding: 8px 10px;
