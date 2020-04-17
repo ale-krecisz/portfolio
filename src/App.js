@@ -8,7 +8,7 @@ import NotificationContext from 'context/notifications/NotificationContext';
 import Navigation from 'components/Navigation/Navigation';
 import HomePage from 'pages/HomePage/HomePage';
 import AboutPage from 'pages/AboutPage';
-import ContactPage from 'pages/ContactPage';
+import ContactPage from 'pages/ContactPage/ContactPage';
 import NoMatchPage from 'pages/NoMatchPage/NoMatchPage';
 
 const App = () => (

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 import { colors, fonts } from 'constants/styleVariables';
 
-const Button = ({ as, children, ...props }) => {
+const Button = ({ as, children, isDark, ...props }) => {
   return (
-    <Container as={as} {...props}>
+    <Container as={as} {...props} isDark={isDark}>
       <span>{children}</span>
     </Container>
   );
@@ -15,6 +15,7 @@ const Button = ({ as, children, ...props }) => {
 
 Button.propTypes = {
   as: PropTypes.node,
+  isDark: PropTypes.bool,
   children: PropTypes.string,
 };
 
@@ -24,6 +25,7 @@ Button.defaultProps = {
 
 export const Container = styled(Link)`
   align-items: center;
+  background-color: ${props => props.isDark && 'rgba(0, 0, 0, 0.4)'};
   display: inline-flex;
   justify-content: center;
   text-decoration: none;

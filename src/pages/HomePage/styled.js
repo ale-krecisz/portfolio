@@ -3,7 +3,6 @@ import { colors, fonts, zIndex } from 'constants/styleVariables';
 import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
 import { Container, CopyContainer } from 'components/layout';
 import { Notification } from '../../context/notifications/components/NotificationItem/styled';
-import { Container as ButtonContainer } from 'components/Button';
 
 export const HomeContainer = styled(Container)`
   color: ${colors.white};
@@ -54,13 +53,5 @@ export const HomeCopyContainer = styled(CopyContainer)`
   ${mediaQuery.large} {
     margin-left: 20vw;
     max-width: 550px;
-  }
-
-  ${ButtonContainer} {
-    background-color: rgba(0, 0, 0, 0.4);
-
-    &:hover {
-      color: ${colors.brand};
-    }
   }
 `;

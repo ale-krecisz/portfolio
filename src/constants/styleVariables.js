@@ -29,7 +29,7 @@ export const zIndex = {
 };
 
 export const fonts = {
-  family: "'Fira Sans Extra Condensed', cursive",
+  family: '\'Fira Sans Extra Condensed\', cursive',
   size: {
     extraSmall: '12px',
     small: '14px',

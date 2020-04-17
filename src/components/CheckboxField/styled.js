@@ -6,7 +6,7 @@ export const Error = styled.p`
   position: absolute;
   font-weight: ${fonts.weight.regular};
   color: ${colors.red.default};
-  bottom: 5px;
+  bottom: 0px;
 `;
 
 export const Label = styled.label`
@@ -20,8 +20,8 @@ export const Label = styled.label`
     height: 20px;
     width: 20px;
     border: 2px solid ${colors.brand};
-    background-color: ${colors.white};
     position: relative;
+    transition: all 0.2s ease-in-out;
   }
 `;
 
@@ -29,6 +29,7 @@ export const Message = styled.p`
   font-weight: ${fonts.weight.light};
   letter-spacing: 1px;
   margin-left: 10px;
+  color: ${colors.white};
 `;
 
 export const Checkbox = styled(Field)`

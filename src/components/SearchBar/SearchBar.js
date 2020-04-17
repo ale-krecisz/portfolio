@@ -31,7 +31,7 @@ const SearchBar = ({ onSubmit }) => (
           placeholder="Do you wanna try?"
           errors={errors.search && touched.search && errors.search}
         />
-        <Button color={true} as="button" type="submit">
+        <Button isDark={true} as="button" type="submit">
           Let&apos;s try!
         </Button>
       </Form>

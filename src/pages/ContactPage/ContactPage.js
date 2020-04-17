@@ -7,8 +7,9 @@ import Button from 'components/Button';
 import InputField from 'components/InputField/InputField';
 import CheckboxField from 'components/CheckboxField/CheckboxField';
 
-import { HomeCopyContainer } from './HomePage/styled';
 import { LayoutContainer } from 'components/layout';
+
+import { Container, Form, Overlay } from './styled';
 
 const validationSchema = object().shape({
   firstName: validators.firstName,
@@ -25,20 +26,19 @@ const initialValues = {
 };
 
 const ContactPage = () => {
-  const handleSubmit = () => {
-    console.log('ok');
-  };
+  const handleSubmit = () => {};
 
   return (
     <LayoutContainer>
-      <HomeCopyContainer>
+      <Container>
+        <Overlay />
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
           {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
-            <form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <InputField
                 name="firstName"
                 onChange={handleChange}
@@ -75,13 +75,13 @@ const ContactPage = () => {
                 errors={errors.termsAccepted && touched.termsAccepted && errors.termsAccepted}
               />
 
-              <Button color={true} as="button" type="submit">
-                Let&apos;s try!
+              <Button isDark={true} as="button" type="submit">
+                Send it to meee!
               </Button>
-            </form>
+            </Form>
           )}
         </Formik>
-      </HomeCopyContainer>
+      </Container>
     </LayoutContainer>
   );
 };

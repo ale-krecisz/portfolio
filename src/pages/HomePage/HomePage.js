@@ -62,12 +62,18 @@ const HomePage = () => {
     setSearchValue(searchValue);
   };
 
+  console.log(singleImage);
+
   return (
     <>
       {isLoading && <Loader />}
       <HomeContainer>
         {singleImage && singleImage.urls ? (
-          <Background src={singleImage.urls.regular} alt={singleImage.alt_desciption} />
+          <Background
+            src={singleImage.urls.regular}
+            alt={singleImage.alt_desciption}
+            user={singleImage.user}
+          />
         ) : (
           <>
             <Note>We don&apos;t have what You&apos;re looking for. Try again! </Note>

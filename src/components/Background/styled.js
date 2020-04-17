@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components/macro';
-import { colors } from 'constants/styleVariables';
+import { colors, fonts } from 'constants/styleVariables';
 import { zIndex } from '../../constants/styleVariables';
 
 const SliderAnimation = keyframes`
@@ -69,4 +69,19 @@ export const Overlay = styled.div`
   top: 0;
   width: 100%;
   z-index: ${zIndex.content};
+`;
+
+export const Author = styled.a`
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: ${zIndex.overlay};
+  color: ${colors.white};
+  font-weight: ${fonts.weight.light};
+  font-size: ${fonts.size.extraSmall};
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
