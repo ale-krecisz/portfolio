@@ -25,18 +25,14 @@ const routes = [
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [dark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const isDark = () => routes.some((route) => route.pathname === pathname);
+    const setDarkMode = () => routes.some((route) => route.pathname === pathname);
 
-    console.log(isDark());
-
-    console.log(routes)
-
-    setIsDark(isDark());
+    setIsDark(setDarkMode());
 
     const disableBodyScroll = () => {
       isMenuOpen
@@ -47,7 +43,7 @@ const Navigation = () => {
     disableBodyScroll();
 
     return () => disableBodyScroll(false);
-  }, [isMenuOpen]);
+  }, [isMenuOpen, pathname]);
 
   const handleOpen = () => {
     setIsMenuOpen(isMenuOpen => !isMenuOpen);
@@ -56,15 +52,15 @@ const Navigation = () => {
   return (
     <>
       <Overlay isMenuOpen={isMenuOpen} onClick={handleOpen} />
-      <Nav>
+      <Nav isDark={isDark}>
         <MenuButton onClick={handleOpen} isMenuOpen={isMenuOpen} />
-        <Logo to={ROUTES.ROOT} isDark={dark}>
+        <Logo to={ROUTES.ROOT}>
           <Button to={ROUTES.ROOT}>ale.krecisz</Button>
         </Logo>
         <Container isMenuOpen={isMenuOpen}>
           <Links>
             {navigationLinks.map(link => (
-              <NavItem key={link.name} to={link.route} isDark={dark}>
+              <NavItem key={link.name} to={link.route}>
                 {link.name}
               </NavItem>
             ))}

@@ -7,25 +7,6 @@ import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
 
 import { ButtonContainer } from 'components/Button';
 
-export const Nav = styled.header`
-  color: ${colors.gray.xDark};
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  right: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: ${zIndex.navigation};
-
-  ${mediaQuery.medium} {
-    left: 0;
-    right: auto;
-    width: auto;
-    position: fixed;
-  }
-`;
-
 const MainLink = styled(NavLink).attrs({
   exact: true,
 })`
@@ -54,13 +35,14 @@ const MainLink = styled(NavLink).attrs({
   }
 
   ${mediaQuery.medium} {
-    color: ${props => (props.isDark ? colors.gray.dark : colors.white)};
-    text-shadow: ${props => (props.isDark ? 'none' : '1px 1px 1px rgba(0, 0, 0, 0.45)')};
-    font-weight: ${props => (props.isDark ? fonts.weight.normal : fonts.weight.light)};
+    color: ${colors.white};
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.45);
+    font-weight: ${fonts.weight.light};
   }
 `;
 
 export const NavItem = styled(MainLink)`
+  color: ${colors.gray.dark};
   letter-spacing: 3px;
   margin-right: 30px;
   padding: 10px 0 10px 5px;
@@ -126,8 +108,11 @@ export const Container = styled.div`
   box-shadow: -5px 5px 14px 1px rgba(0, 0, 0, 0.3);
   margin-left: auto;
   padding: 60px 20px 30px;
-  transform: translateX(100%);
+  transform: translateX(110%);
   transition: transform 0.4s ease-in-out;
+  position: fixed;
+  top: 0;
+  right: 0;
 
   ${props =>
     props.isMenuOpen &&
@@ -140,6 +125,7 @@ export const Container = styled.div`
     height: 100%;
     padding: 0;
     min-height: 540px;
+    position: unset;
   }
 `;
 
@@ -286,4 +272,41 @@ export const Logo = styled(MainLink)`
       padding: 8px 10px;
     }
   }
+`;
+
+
+export const Nav = styled.header`
+  color: ${colors.gray.xDark};
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  right: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: ${zIndex.navigation};
+
+  ${mediaQuery.medium} {
+    left: 0;
+    right: auto;
+    width: auto;
+    position: fixed;
+  }
+
+  ${props => props.isDark && css`
+    ${MainLink} {
+      ${mediaQuery.medium} {
+        color: ${colors.gray.dark};
+        text-shadow: none;
+        font-weight: ${fonts.weight.normal};
+      }
+    }
+
+    ${MenuButton} {
+      background-color: ${colors.white};
+      span {
+        background-color: ${colors.gray.mid};
+      }
+    }
+  `};
 `;

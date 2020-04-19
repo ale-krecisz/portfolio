@@ -21,7 +21,7 @@ export default createGlobalStyle`
   body {
     background-color: ${colors.brand};
 
-    &.scroll-lock {
+    &.body-scroll {
       overflow: hidden;
 
     ${mediaQuery.medium} {
