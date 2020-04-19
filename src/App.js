@@ -10,6 +10,7 @@ import HomePage from 'pages/HomePage/HomePage';
 import AboutPage from 'pages/AboutPage';
 import ContactPage from 'pages/ContactPage/ContactPage';
 import NoMatchPage from 'pages/NoMatchPage/NoMatchPage';
+import TermsPage from 'pages/TermsPage';
 
 const App = () => (
   <BrowserRouter>
@@ -19,8 +20,9 @@ const App = () => (
       <NotificationContext>
         <Switch>
           <Route path={ROUTES.ROOT} exact component={HomePage} />
-          <Route path={ROUTES.PROFILE} component={AboutPage} />
+          <Route path={ROUTES.ABOUT} component={AboutPage} />
           <Route path={ROUTES.CONTACT} component={ContactPage} />
+          <Route path={ROUTES.TERMS} component={TermsPage} />
           <Route component={NoMatchPage} />
         </Switch>
       </NotificationContext>

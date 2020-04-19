@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import { object } from 'yup';
 import { validators } from 'constants/validators';
+import ROUTES from 'constants/route-constants';
 
 import Button from 'components/Button';
 import InputField from 'components/InputField/InputField';
@@ -69,11 +71,11 @@ const ContactPage = () => {
               <CheckboxField
                 name="termsAccepted"
                 type="checkbox"
-                text="I accept terms of service"
                 onBlur={handleBlur}
                 value={values.termsAccepted}
                 errors={errors.termsAccepted && touched.termsAccepted && errors.termsAccepted}
-              />
+              >I accept <Link to={ROUTES.TERMS}>terms of service</Link>
+              </CheckboxField>
 
               <Button isDark={true} as="button" type="submit">
                 Send it to meee!

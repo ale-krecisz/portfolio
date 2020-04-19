@@ -1,11 +1,13 @@
 import React from 'react';
 
+import PerspectiveText from 'components/PerspectiveText/PerspectiveText';
 import { LayoutContainer, Paragraph, Highlight } from 'components/layout';
 import { MainTitle, HomeCopyContainer } from './HomePage/styled';
 
 const AboutPage = () => {
   return (
     <LayoutContainer>
+      <PerspectiveText />
       <HomeCopyContainer>
         <MainTitle>
           <Highlight>안녕하세요</Highlight>

@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
-import { fonts, colors } from 'constants/styleVariables';
 import { Field } from 'formik';
+import { fonts, colors } from 'constants/styleVariables';
+import { zIndex } from '../../constants/styleVariables';
 
 export const Error = styled.p`
   position: absolute;
@@ -30,6 +31,18 @@ export const Message = styled.p`
   letter-spacing: 1px;
   margin-left: 10px;
   color: ${colors.white};
+  position: relative;
+  z-index: ${zIndex.content};
+
+  a {
+    color: ${colors.white};
+    font-weight: ${fonts.weight.regular};
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: ${colors.brand};
+    }
+  }
 `;
 
 export const Checkbox = styled(Field)`

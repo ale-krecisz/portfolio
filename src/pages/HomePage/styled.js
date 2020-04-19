@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro';
 import { colors, fonts, zIndex } from 'constants/styleVariables';
 import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
-import { Container, CopyContainer } from 'components/layout';
+import { Section, CopyContainer } from 'components/layout';
 import { Notification } from '../../context/notifications/components/NotificationItem/styled';
 
-export const HomeContainer = styled(Container)`
+export const HomeSection = styled(Section)`
   color: ${colors.white};
   justify-content: center;
 `;

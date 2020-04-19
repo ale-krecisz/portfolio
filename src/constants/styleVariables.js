@@ -35,8 +35,9 @@ export const fonts = {
     small: '14px',
     medium: '16px',
     large: '24px',
-    xLarge: '60px',
-    xxLarge: '160px',
+    xlarge: '48px',
+    xxLarge: '60px',
+    xxxLarge: '160px',
   },
   weight: {
     light: 200,

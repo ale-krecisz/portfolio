@@ -9,7 +9,7 @@ import SearchBar from 'components/SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
 import { Paragraph, Highlight } from 'components/layout';
 
-import { HomeCopyContainer, HomeContainer, MainTitle, Note } from './styled';
+import { HomeCopyContainer, HomeSection, MainTitle, Note } from './styled';
 
 let timer;
 
@@ -67,7 +67,7 @@ const HomePage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <HomeContainer>
+      <HomeSection>
         {singleImage && singleImage.urls ? (
           <Background
             src={singleImage.urls.regular}
@@ -105,7 +105,7 @@ const HomePage = () => {
           </Paragraph>
           <SearchBar onSubmit={onSearchSubmit} />
         </HomeCopyContainer>
-      </HomeContainer>
+      </HomeSection>
     </>
   );
 };

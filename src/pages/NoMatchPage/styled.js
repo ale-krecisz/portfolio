@@ -19,7 +19,7 @@ export const Text = styled.h1`
   z-index: ${zIndex.content};
 
   ${mediaQuery.medium} {
-    font-size: ${fonts.size.xxLarge};
+    font-size: ${fonts.size.xxxLarge};
     line-height: 0.85;
   }
 `;

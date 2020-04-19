@@ -7,9 +7,9 @@ import { colors, fonts } from 'constants/styleVariables';
 
 const Button = ({ as, children, isDark, ...props }) => {
   return (
-    <Container as={as} {...props} isDark={isDark}>
+    <ButtonContainer as={as} {...props} isDark={isDark}>
       <span>{children}</span>
-    </Container>
+    </ButtonContainer>
   );
 };
 
@@ -23,7 +23,7 @@ Button.defaultProps = {
   as: Link,
 };
 
-export const Container = styled(Link)`
+export const ButtonContainer = styled(Link)`
   align-items: center;
   background-color: ${props => props.isDark && 'rgba(0, 0, 0, 0.4)'};
   display: inline-flex;

@@ -1,6 +1,7 @@
 export default {
   ROOT: '/',
-  PROFILE: '/about',
+  ABOUT: '/about',
   PORTFOLIO: '/portfolio',
   CONTACT: '/contact-us',
+  TERMS: '/terms',
 };

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import BackgroundLines from './BackgroundLines/BackgroundLines';
 
-export const Container = styled.section`
+export const Section = styled.section`
   background-color: ${colors.white};
   display: flex;
   flex-direction: column;
@@ -23,10 +23,10 @@ export const Main = styled.div`
 `;
 
 export const LayoutContainer = ({ children }) => (
-  <Container>
+  <Section>
     <BackgroundLines />
     <Main>{children}</Main>
-  </Container>
+  </Section>
 );
 
 LayoutContainer.propTypes = {

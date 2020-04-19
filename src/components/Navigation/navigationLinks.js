@@ -7,7 +7,7 @@ import { ReactComponent as LinkedIn } from 'assets/linkedin.svg';
 export const navigationLinks = [
   {
     name: 'About',
-    route: ROUTES.PROFILE,
+    route: ROUTES.ABOUT,
   },
   {
     name: 'Contact',

@@ -17,17 +17,27 @@ import {
   SocialLink,
 } from './styled';
 
+
+const routes = [
+  { pathname: ROUTES.ABOUT },
+  { pathname: ROUTES.TERMS },
+];
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [dark, setIsDark] = useState(false);
+
   const { pathname } = useLocation();
 
-  const handleDarkNav = () => {
-    const location = pathname === '/about';
-    setIsDark(location);
-  };
-
   useEffect(() => {
+    const isDark = () => routes.some((route) => route.pathname === pathname);
+
+    console.log(isDark());
+
+    console.log(routes)
+
+    setIsDark(isDark());
+
     const disableBodyScroll = () => {
       isMenuOpen
         ? document.body.classList.add('body-scroll')
@@ -35,29 +45,26 @@ const Navigation = () => {
     };
 
     disableBodyScroll();
-    handleDarkNav();
 
     return () => disableBodyScroll(false);
-  }, [isMenuOpen, pathname]);
+  }, [isMenuOpen]);
 
   const handleOpen = () => {
     setIsMenuOpen(isMenuOpen => !isMenuOpen);
   };
-
-  console.log(isDark);
 
   return (
     <>
       <Overlay isMenuOpen={isMenuOpen} onClick={handleOpen} />
       <Nav>
         <MenuButton onClick={handleOpen} isMenuOpen={isMenuOpen} />
-        <Logo to={ROUTES.ROOT} isDark={isDark}>
+        <Logo to={ROUTES.ROOT} isDark={dark}>
           <Button to={ROUTES.ROOT}>ale.krecisz</Button>
         </Logo>
         <Container isMenuOpen={isMenuOpen}>
           <Links>
             {navigationLinks.map(link => (
-              <NavItem key={link.name} to={link.route} isDark={isDark}>
+              <NavItem key={link.name} to={link.route} isDark={dark}>
                 {link.name}
               </NavItem>
             ))}

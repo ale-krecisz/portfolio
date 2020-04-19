@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { colors, fonts, zIndex } from 'constants/styleVariables';
 import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
 
-import { Container as ButtonContainer } from 'components/Button';
+import { ButtonContainer } from 'components/Button';
 
 export const Nav = styled.header`
   color: ${colors.gray.xDark};
@@ -36,8 +36,8 @@ const MainLink = styled(NavLink).attrs({
     content: '';
     background-image: linear-gradient(${colors.brandSecond}, ${colors.brandSecond});
     position: absolute;
-    bottom: 7px;
-    height: 10px;
+    bottom: 6px;
+    height: 8px;
     left: 0;
     transform: scaleX(0);
     transform-origin: left;

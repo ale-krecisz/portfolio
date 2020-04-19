@@ -11,6 +11,7 @@ export default createGlobalStyle`
     margin: 0;
     outline: none;
     font-family: ${fonts.family};
+    -webkit-font-smoothing: antialiased;
 
     &:link, &:visited, &:hover, &:focus, &:active {
       outline: none;

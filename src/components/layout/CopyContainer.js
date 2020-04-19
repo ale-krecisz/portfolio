@@ -14,7 +14,7 @@ export const CopyContainer = styled.div`
   }
 
   ${mediaQuery.large} {
-    margin-left: 420px;
-    max-width: 450px;
+    max-width: 80%;
+    padding: 160px 40px;
   }
 `;
