@@ -11,7 +11,6 @@ export const Title = styled.h1`
   ${mediaQuery.small} {
     font-size: 80px;
   }
-
 `;
 
 export const SubTitle = styled.h2`

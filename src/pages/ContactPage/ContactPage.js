@@ -31,7 +31,7 @@ const ContactPage = () => {
   const handleSubmit = () => {};
 
   return (
-    <LayoutContainer>
+    <LayoutContainer centered={true}>
       <Container>
         <Overlay />
         <Formik

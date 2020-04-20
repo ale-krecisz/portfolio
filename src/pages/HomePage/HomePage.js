@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import unsplash from 'api/unsplash';
 import useErrorHandler from 'context/notifications/useErrorHandler';
 
-import defaultSlide from 'assets/10.jpg';
+import defaultSlide from 'assets/1.jpg';
 
 import Background from 'components/Background/Background';
 import SearchBar from 'components/SearchBar/SearchBar';

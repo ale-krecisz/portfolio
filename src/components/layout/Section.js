@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled, {css} from 'styled-components/macro';
 import { colors } from 'constants/styleVariables';
 
 import PropTypes from 'prop-types';
@@ -13,6 +13,11 @@ export const Section = styled.section`
   min-height: 100vh;
   position: relative;
   width: 100%;
+
+  ${props => props.centered && css`
+    align-items: center;
+    justify-content: center;
+  `};
 `;
 
 export const Main = styled.div`
@@ -22,8 +27,8 @@ export const Main = styled.div`
   position: relative;
 `;
 
-export const LayoutContainer = ({ children }) => (
-  <Section>
+export const LayoutContainer = ({ centered, children }) => (
+  <Section centered={centered}>
     <BackgroundLines />
     <Main>{children}</Main>
   </Section>
@@ -31,4 +36,9 @@ export const LayoutContainer = ({ children }) => (
 
 LayoutContainer.propTypes = {
   children: PropTypes.node,
+  centered: PropTypes.bool,
+};
+
+LayoutContainer.defaultProps = {
+  centered: false,
 };
