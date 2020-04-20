@@ -7,9 +7,9 @@ import defaultSlide from 'assets/1.jpg';
 import Background from 'components/Background/Background';
 import SearchBar from 'components/SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
-import { Paragraph, Highlight } from 'components/layout';
+import { Paragraph, Highlight, MainTitle } from 'components/layout';
 
-import { HomeCopyContainer, HomeSection, MainTitle, Note } from './styled';
+import { HomeCopyContainer, HomeSection, Note } from './styled';
 
 let timer;
 

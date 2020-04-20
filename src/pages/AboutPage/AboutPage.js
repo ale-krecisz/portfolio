@@ -1,14 +1,19 @@
 import React from 'react';
 
 import PerspectiveText from 'components/PerspectiveText/PerspectiveText';
-import { LayoutContainer, Paragraph, Highlight } from 'components/layout';
-import { MainTitle, HomeCopyContainer } from './HomePage/styled';
+import { LayoutContainer, Paragraph, Highlight, MainTitle } from 'components/layout';
+import { Container } from './styled';
 
 const AboutPage = () => {
   return (
     <LayoutContainer>
-      <PerspectiveText />
-      <HomeCopyContainer>
+      <PerspectiveText
+        firstLine="I am"
+        secondLine="so cool"
+        thirdLine="so smart"
+        fourthLine="so awesome"
+      />
+      <Container>
         <MainTitle>
           <Highlight>안녕하세요</Highlight>
         </MainTitle>
@@ -31,7 +36,10 @@ const AboutPage = () => {
           <br />
           <br />
         </Paragraph>
-      </HomeCopyContainer>
+      </Container>
+      <Container>
+        <Paragraph></Paragraph>
+      </Container>
     </LayoutContainer>
   );
 };

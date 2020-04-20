@@ -1,30 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Line, Letters } from './styled';
 
-const PerspectiveText = () => (
+const PerspectiveText = ({ firstLine, secondLine, thirdLine, fourthLine }) => (
   <Container>
     <Line>
       <Letters>&nbsp;</Letters>
-      <Letters>I am</Letters>
+      <Letters>{firstLine}</Letters>
     </Line>
     <Line>
-      <Letters>I am</Letters>
-      <Letters>So cool</Letters>
+      <Letters>{firstLine}</Letters>
+      <Letters>{secondLine}</Letters>
     </Line>
     <Line>
-      <Letters>So cool</Letters>
-      <Letters>So smart</Letters>
+      <Letters>{secondLine}</Letters>
+      <Letters>{thirdLine}</Letters>
     </Line>
     <Line>
-      <Letters>So smart</Letters>
-      <Letters>So awesome</Letters>
+      <Letters>{thirdLine}</Letters>
+      <Letters>{fourthLine}</Letters>
     </Line>
     <Line>
-      <Letters>So awesome</Letters>
+      <Letters>{fourthLine}</Letters>
       <Letters></Letters>
     </Line>
   </Container>
 );
+
+PerspectiveText.propTypes = {
+  firstLine: PropTypes.string,
+  secondLine: PropTypes.string,
+  thirdLine: PropTypes.string,
+  fourthLine: PropTypes.string,
+};
 
 export default PerspectiveText;
