@@ -1,39 +1,12 @@
 import styled from 'styled-components/macro';
-import { colors, fonts, zIndex } from 'constants/styleVariables';
-import { mediaQuery, mediaQueryHeight } from 'constants/mediaQuery';
+import { colors } from 'constants/styleVariables';
+import { mediaQuery } from 'constants/mediaQuery';
 import { Section, CopyContainer } from 'components/layout';
 import { Notification } from '../../context/notifications/components/NotificationItem/styled';
 
 export const HomeSection = styled(Section)`
   color: ${colors.white};
   justify-content: center;
-`;
-
-export const MainTitle = styled.h1`
-  font-size: 60px;
-  color: ${colors.white};
-  z-index: ${zIndex.content};
-  font-weight: ${fonts.weight.bold};
-  margin-bottom: 20px;
-
-  ${mediaQueryHeight.medium} {
-    font-size: 120px;
-  }
-
-  ${mediaQuery.medium} {
-    font-size: 160px;
-    white-space: nowrap;
-    position: absolute;
-    left: -45%;
-    top: 50%;
-    transform: rotate(-90deg);
-    transform-origin: top center;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  ${mediaQuery.large} {
-    left: -70%;
-  }
 `;
 
 export const Note = styled(Notification)`

@@ -1,10 +1,12 @@
-import styled, {css} from 'styled-components/macro';
-import {colors} from 'constants/styleVariables';
+import styled, { css } from 'styled-components/macro';
+import { colors, fonts } from 'constants/styleVariables';
+import { mediaQuery } from 'constants/mediaQuery';
 
-const leftOffset = '29px';
-const clipHeight = '68px';
+const leftOffset = '25px';
+const fontSizeMobile = '50px';
+const fontSize = '80px';
 const newLocal = '5px';
-const lineHeight = clipHeight - newLocal;
+const lineHeight = fontSize - newLocal;
 
 const createCSS = () => {
   let styles = '';
@@ -18,17 +20,22 @@ const createCSS = () => {
     `;
   }
 
-  return css`${styles}`;
+  return css`
+    ${styles}
+  `;
 };
 
-
 export const Line = styled.li`
-  height: ${clipHeight};
+  height: ${fontSizeMobile};
   overflow: hidden;
   position: relative;
-  
+
+  ${mediaQuery.small} {
+    height: ${fontSize};
+  }
+
   &:nth-child(odd) {
-    transform: skew(60deg, -30deg) scaleY(.66667);
+    transform: skew(60deg, -30deg) scaleY(0.66667);
   }
   &:nth-child(even) {
     transform: skew(0deg, -30deg) scaleY(1.33333);
@@ -38,33 +45,46 @@ export const Line = styled.li`
 `;
 
 export const Letters = styled.p`
-  height: ${clipHeight};
+  height: ${fontSizeMobile};
   line-height: ${lineHeight};
   padding: 0 10px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transform: translate3d(0, 0, 0);
   vertical-align: top;
   white-space: nowrap;
+
+  ${mediaQuery.small} {
+    height: ${fontSize};
+  }
 `;
 
 export const Container = styled.ul`
-  margin: 0 auto;
-  padding: 90px 0;
-  font-size: ${clipHeight};
-  font-weight: 900;
+  color: ${colors.brand};
+  font-kerning: normal;
+  font-size: ${fontSizeMobile};
+  font-weight: ${fonts.weight.bold};
   letter-spacing: -2px;
+  padding-bottom: 90px;
   text-transform: uppercase;
   transform: translate3d(0, 0, 0);
-  font-kerning: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-
-  color: ${colors.brand};
   z-index: 1000;
+
+  ${mediaQuery.small} {
+    font-size: ${fontSize};
+    padding-right: 20%;
+    margin: 0 0 0 auto;
+    padding-bottom: 40px;
+  }
 
   &:hover {
     ${Letters} {
-      transform: translate3d(0, -${clipHeight}, 0);
+      transform: translate3d(0, -${fontSizeMobile}, 0);
+
+      ${mediaQuery.small} {
+        transform: translate3d(0, -${fontSize}, 0);
+      }
     }
   }
 `;
