@@ -4,7 +4,7 @@ import { mediaQuery } from 'constants/mediaQuery';
 
 const leftOffset = '25px';
 const fontSizeMobile = '50px';
-const fontSize = '80px';
+const fontSize = '70px';
 const newLocal = '5px';
 const lineHeight = fontSize - newLocal;
 
