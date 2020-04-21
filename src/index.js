@@ -5,9 +5,4 @@ import Scrollbar from 'smooth-scrollbar';
 
 Scrollbar.init(document.querySelector('#root'));
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

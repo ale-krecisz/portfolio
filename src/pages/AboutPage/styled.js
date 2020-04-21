@@ -13,3 +13,7 @@ export const Container = styled(CopyContainer)`
     max-width: 550px;
   }
 `;
+
+export const HobbyContainer = styled.div`
+  padding: 100px 0;
+`;

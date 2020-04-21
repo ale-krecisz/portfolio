@@ -1,8 +1,8 @@
 import React from 'react';
 
 import PerspectiveText from 'components/PerspectiveText/PerspectiveText';
-import { LayoutContainer, Paragraph, Highlight, MainTitle } from 'components/layout';
-import { Container } from './styled';
+import { LayoutContainer, Paragraph, Highlight, MainTitle, Title } from 'components/layout';
+import { Container, HobbyContainer } from './styled';
 
 const AboutPage = () => {
   return (
@@ -37,9 +37,9 @@ const AboutPage = () => {
           <br />
         </Paragraph>
       </Container>
-      <Container>
-        <Paragraph></Paragraph>
-      </Container>
+      <HobbyContainer>
+        <Title>So what else?</Title>
+      </HobbyContainer>
     </LayoutContainer>
   );
 };
