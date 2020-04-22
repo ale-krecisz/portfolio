@@ -37,7 +37,7 @@ const HomePage = () => {
         params: { query: searchValue },
       })
       .then(result => {
-        const randomNumber = Math.floor(Math.random() * 10);
+        const randomNumber = Math.floor(Math.random() * result.data.results.length);
         setSingleImage(result.data.results[randomNumber]);
 
         timer = setTimeout(() => {
