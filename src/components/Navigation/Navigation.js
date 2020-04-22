@@ -20,6 +20,7 @@ import {
 
 const routes = [
   { pathname: ROUTES.ABOUT },
+  { pathname: ROUTES.CONTACT },
   { pathname: ROUTES.TERMS },
 ];
 

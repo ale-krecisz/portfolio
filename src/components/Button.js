@@ -25,7 +25,7 @@ Button.defaultProps = {
 
 export const ButtonContainer = styled(Link)`
   align-items: center;
-  background-color: ${props => props.isDark && 'rgba(0, 0, 0, 0.4)'};
+  background-color: ${props => props.isDark && 'rgba(0, 0, 0, 0.2)'};
   display: inline-flex;
   justify-content: center;
   text-decoration: none;

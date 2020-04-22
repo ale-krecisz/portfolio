@@ -19,7 +19,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${colors.brand};
+    background-color: ${colors.brandSecond};
 
     &.body-scroll {
       overflow: hidden;

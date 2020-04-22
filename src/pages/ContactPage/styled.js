@@ -1,17 +1,29 @@
 import styled from 'styled-components/macro';
+import { mediaQuery } from 'constants/mediaQuery';
 
 import backgroundSlide from 'assets/2.jpg';
 
+
 export const Container = styled.div`
-  padding: 100px;
-  margin: 0 auto;
   background: url(${backgroundSlide}) center center no-repeat;
   background-size: cover;
-  min-width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 100px auto 60px;
+  max-width: 500px;
+  padding: 80px 20px;
   position: relative;
+  width: 100%;
+
+  ${mediaQuery.small} {
+    max-width: 750px;
+    padding: 80px 40px;
+  }
+
+  ${mediaQuery.medium} {
+    padding: 80px;
+  }
 `;
 
 export const Overlay = styled.div`
@@ -20,9 +32,18 @@ export const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
 `;
 
 export const Form = styled.form`
-  width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ${mediaQuery.small} {
+    width: 450px;
+  }
+
 `;

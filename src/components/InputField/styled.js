@@ -11,8 +11,10 @@ export const Error = styled.p`
 
 export const Label = styled.div`
   margin-bottom: 10px;
+  max-width: 450px;
   position: relative;
   padding-bottom: 25px;
+  width: 100%;
 
   textarea {
     height: 100px;
@@ -29,7 +31,6 @@ export const Input = styled(Field)`
   height: 50px;
   letter-spacing: 1px;
   margin-bottom: 4px;
-  max-width: 450px;
   outline: none;
   padding: 15px 20px;
   width: 100%;

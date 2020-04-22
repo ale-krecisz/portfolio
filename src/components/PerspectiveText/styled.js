@@ -5,9 +5,8 @@ import { mediaQuery } from 'constants/mediaQuery';
 const leftOffset = '25px';
 const fontSizeMobileS = '35px';
 const fontSizeMobile = '45px';
-const fontSize = '70px';
-const newLocal = '5px';
-const lineHeight = fontSize - newLocal;
+const fontSize = '62px';
+const fontSizeL = '72px';
 
 const createCSS = () => {
   let styles = '';
@@ -35,8 +34,13 @@ export const Line = styled.li`
     height: ${fontSizeMobile};
   }
 
-  ${mediaQuery.large} {
+  ${mediaQuery.medium} {
     height: ${fontSize};
+  }
+
+
+  ${mediaQuery.large} {
+    height: ${fontSizeL};
   }
 
   &:nth-child(odd) {
@@ -51,7 +55,7 @@ export const Line = styled.li`
 
 export const Letters = styled.p`
   height: ${fontSizeMobileS};
-  line-height: ${lineHeight};
+  line-height: 1;
   padding: 0 10px;
   transition: all 0.3s ease-in-out;
   transform: translate3d(0, 0, 0);
@@ -62,8 +66,12 @@ export const Letters = styled.p`
     height: ${fontSizeMobile};
   }
 
-  ${mediaQuery.large} {
+  ${mediaQuery.medium} {
     height: ${fontSize};
+  }
+
+  ${mediaQuery.large} {
+    height: ${fontSizeL};
   }
 `;
 
@@ -91,12 +99,13 @@ export const Container = styled.ul`
   }
 
   ${mediaQuery.medium} {
-    padding: 0 20% 80px 0;
+    font-size: ${fontSize};
+    padding: 0 20% 60px 0;
+    transform: translateY(-20px);
   }
 
   ${mediaQuery.large} {
-    font-size: ${fontSize};
-    padding: 0 20% 40px 0;
+    font-size: ${fontSizeL};
   }
 
   &:hover {
@@ -107,8 +116,12 @@ export const Container = styled.ul`
         transform: translate3d(0, -${fontSizeMobile}, 0);
       }
 
-      ${mediaQuery.large} {
+      ${mediaQuery.medium} {
         transform: translate3d(0, -${fontSize}, 0);
+      }
+
+      ${mediaQuery.large} {
+        transform: translate3d(0, -${fontSizeL}, 0);
       }
     }
   }

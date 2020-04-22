@@ -23,8 +23,10 @@ export const Section = styled.section`
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: center;
   position: relative;
+  width: 100%;
 `;
 
 export const LayoutContainer = ({ centered, children }) => (
