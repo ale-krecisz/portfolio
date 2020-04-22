@@ -1,5 +1,6 @@
 const media = {
-  xsmall: '360px',
+  xxsmall: '360px',
+  xsmall: '560px',
   small: '798px',
   medium: '1024px',
   large: '1440px',
@@ -7,6 +8,7 @@ const media = {
 };
 
 export const mediaQuery = {
+  xxsmall: `@media screen and (min-width: ${media.xxsmall})`,
   xsmall: `@media screen and (min-width: ${media.xsmall})`,
   small: `@media screen and (min-width: ${media.small})`,
   medium: `@media screen and (min-width: ${media.medium})`,

@@ -15,6 +15,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
     "react-slick": "^0.25.2",
+    "react-transition-group": "^4.3.0",
     "smooth-scrollbar": "^8.5.0",
     "styled-components": "^4.4.0",
     "styled-components.macro": "^1.0.0",

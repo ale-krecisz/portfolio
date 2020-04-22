@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import ROUTES from 'constants/route-constants';
 import GlobalStyle from 'constants/GlobalStyle';
@@ -18,13 +19,27 @@ const App = () => (
       <GlobalStyle />
       <Navigation />
       <NotificationContext>
-        <Switch>
-          <Route path={ROUTES.ROOT} exact component={HomePage} />
-          <Route path={ROUTES.ABOUT} component={AboutPage} />
-          <Route path={ROUTES.CONTACT} component={ContactPage} />
-          <Route path={ROUTES.TERMS} component={TermsPage} />
-          <Route component={NoMatchPage} />
-        </Switch>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup component={null}>
+              <CSSTransition
+                timeout={1000}
+                classNames="defaultAnimation"
+                unmountOnExit
+                key={location.key}
+              >
+                <Switch location={location}>
+                  <Route path={ROUTES.ROOT} exact component={HomePage} />
+                  <Route path={ROUTES.ABOUT} component={AboutPage} />
+                  <Route path={ROUTES.CONTACT} component={ContactPage} />
+                  <Route path={ROUTES.TERMS} component={TermsPage} />
+                  <Route component={NoMatchPage} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup> 
+          )}
+        />
+          
       </NotificationContext>
     </>
   </BrowserRouter>

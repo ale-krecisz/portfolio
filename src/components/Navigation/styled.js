@@ -139,7 +139,7 @@ export const Overlay = styled.div`
   top: 0;
   transition: opacity 0.5s ease-in-out;
   right: 0;
-  z-index: ${zIndex.overlay};
+  z-index: calc(${zIndex.navigationOverlay} - 1);
 
   ${mediaQuery.medium} {
     display: none;
@@ -278,15 +278,15 @@ export const Logo = styled(MainLink)`
 export const Nav = styled.header`
   color: ${colors.gray.xDark};
   display: flex;
-  height: 100%;
   flex-direction: column;
-  right: 0;
+  left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: ${zIndex.navigation};
+  z-index: ${zIndex.navigationOverlay};
 
   ${mediaQuery.medium} {
+    height: 100%;
     left: 0;
     right: auto;
     width: auto;

@@ -14,7 +14,7 @@ export const MainTitle = styled.h1`
   }
 
   ${mediaQuery.medium} {
-    font-size: 160px;
+    font-size: 140px;
     white-space: nowrap;
     position: absolute;
     left: -45%;
@@ -25,6 +25,7 @@ export const MainTitle = styled.h1`
     max-width: 100%;
   }
   ${mediaQuery.large} {
+    font-size: 160px;
     left: -70%;
   }
 `;

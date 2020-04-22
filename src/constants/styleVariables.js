@@ -23,6 +23,7 @@ export const zIndex = {
   overlay: 2,
   loader: 3,
   spinner: 4,
+  navigationOverlay: 7,
   navigation: 8,
   modalOverflow: 9,
   modal: 10,

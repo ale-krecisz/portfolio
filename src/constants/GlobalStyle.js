@@ -38,4 +38,31 @@ export default createGlobalStyle`
     background-color: transparent;
     border: none;
   }
+
+  .defaultAnimation {
+    transform-origin: center;
+    
+    &-enter {
+      opacity: 0;
+      transform: scale(.9);
+      transition: opacity 200ms, transform 500ms;
+
+      &-active {
+        opacity: 1;
+        transform: scale(1);
+
+      }
+    }
+    
+    &-exit {
+      opacity: 1;
+
+      &-active {
+        opacity: 0;
+        transform: scale(.6);
+        z-index: 1;
+        transition: opacity 200ms, transform 00ms;
+      }
+    }
+  }
 `;

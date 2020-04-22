@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import { colors } from 'constants/styleVariables';
 import { mediaQuery } from 'constants/mediaQuery';
-import { Section, CopyContainer } from 'components/layout';
+import { Section, CopyContainer, MainTitle } from 'components/layout';
 import { Notification } from '../../context/notifications/components/NotificationItem/styled';
 
 export const HomeSection = styled(Section)`
@@ -26,5 +26,11 @@ export const HomeCopyContainer = styled(CopyContainer)`
   ${mediaQuery.large} {
     margin-left: 20vw;
     max-width: 550px;
+  }
+
+  ${MainTitle} {
+    ${mediaQuery.medium} {
+      font-size: 160px;
+    }
   }
 `;
