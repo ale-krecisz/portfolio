@@ -6,7 +6,7 @@ const leftOffset = '25px';
 const fontSizeMobileS = '35px';
 const fontSizeMobile = '45px';
 const fontSize = '62px';
-const fontSizeL = '72px';
+const fontSizeL = '75px';
 
 const createCSS = () => {
   let styles = '';
