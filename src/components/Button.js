@@ -14,7 +14,7 @@ const Button = ({ as, children, isDark, ...props }) => {
 };
 
 Button.propTypes = {
-  as: PropTypes.node,
+  as: PropTypes.object,
   isDark: PropTypes.bool,
   children: PropTypes.string,
 };

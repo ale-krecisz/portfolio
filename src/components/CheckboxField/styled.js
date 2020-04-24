@@ -16,6 +16,7 @@ export const Label = styled.label`
   padding-bottom: 25px;
   display: flex;
   align-items: center;
+  width: 100%;
 
   span {
     height: 20px;

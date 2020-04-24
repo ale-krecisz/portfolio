@@ -25,7 +25,7 @@ const NotificationItem = ({ notification }) => {
 };
 
 NotificationItem.propTypes = {
-  notification: PropTypes.node,
+  notification: PropTypes.object,
 };
 
 export default NotificationItem;
