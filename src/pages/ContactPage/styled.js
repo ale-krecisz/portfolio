@@ -21,7 +21,7 @@ export const Container = styled.div`
   ${mediaQuery.small} {
     max-width: 750px;
     padding: 80px 40px;
-    min-height: 750px;
+    min-height: 608px;
   }
 
   ${mediaQuery.medium} {
