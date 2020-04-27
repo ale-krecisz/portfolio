@@ -16,7 +16,7 @@ const Button = ({ as, children, isDark, ...props }) => {
 Button.propTypes = {
   as: PropTypes.object,
   isDark: PropTypes.bool,
-  children: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Button.defaultProps = {
@@ -26,16 +26,17 @@ Button.defaultProps = {
 export const ButtonContainer = styled(Link)`
   align-items: center;
   background-color: ${props => props.isDark && 'rgba(0, 0, 0, 0.2)'};
-  display: inline-flex;
-  justify-content: center;
-  text-decoration: none;
-  position: relative;
-  transition: all 0.15s ease-in-out 0.25s;
   color: ${colors.brand};
-  font-weight: ${fonts.weight.regular};
+  display: inline-flex;
   font-size: ${fonts.size.small};
+  font-weight: ${fonts.weight.regular};
+  justify-content: center;
+  min-height: 51px;
   min-width: 160px;
   padding: 17px 30px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out 0.25s;
 
   &::after,
   &::before {
@@ -84,32 +85,34 @@ export const ButtonContainer = styled(Link)`
     }
   }
 
-  &:hover {
-    color: ${colors.white};
-    background-color: ${colors.brand};
+  &:not(:disabled) {
+    &:hover {
+      color: ${colors.white};
+      background-color: ${colors.brand};
 
-    &::after,
-    &::before {
-      width: 2px;
-    }
-
-    span {
       &::after,
       &::before {
-        height: 2px;
+        width: 2px;
       }
-    }
 
-    &::after,
-    span::after {
-      right: 0;
-      bottom: 0;
-    }
+      span {
+        &::after,
+        &::before {
+          height: 2px;
+        }
+      }
 
-    &::before,
-    span::before {
-      left: 0;
-      top: 0;
+      &::after,
+      span::after {
+        right: 0;
+        bottom: 0;
+      }
+
+      &::before,
+      span::before {
+        left: 0;
+        top: 0;
+      }
     }
   }
 `;

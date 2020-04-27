@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 import { mediaQuery } from 'constants/mediaQuery';
+import { colors } from 'constants/styleVariables';
+import { Highlight, SubTitle } from 'components/layout';
 
 import backgroundSlide from 'assets/2.jpg';
 
@@ -9,6 +11,7 @@ export const Container = styled.div`
   background-size: cover;
   display: flex;
   align-items: center;
+  min-height: 750px;
   justify-content: center;
   margin: 100px auto 60px;
   max-width: 500px;
@@ -23,6 +26,18 @@ export const Container = styled.div`
 
   ${mediaQuery.medium} {
     padding: 80px;
+  }
+  
+  ${Highlight} {
+    display: block;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  ${SubTitle} {
+    position: relative;
+    color: ${colors.white};
+    text-align: center;
   }
 `;
 
@@ -45,5 +60,4 @@ export const Form = styled.form`
   ${mediaQuery.small} {
     width: 450px;
   }
-
 `;

@@ -229,6 +229,7 @@ export const Logo = styled(MainLink)`
   ${ButtonContainer} {
     padding: 8px 10px;
     min-width: 60px;
+    min-height: 20px;
   }
 
   &::after {

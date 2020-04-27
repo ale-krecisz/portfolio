@@ -11,14 +11,15 @@ const spin = keyframes`
 `;
 
 export const Spinner = styled.div`
-  border: 3px solid ${colors.gray.transparent};
-  border-top: 3px solid ${colors.brand};
+  border: 2px solid ${colors.gray.transparent};
+  border-top: 2px solid ${colors.brand};
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 26px;
+  height: 26px;
+  left: calc(50% - 26px / 2);
+  top: calc(50% - 26px / 2);
   animation: ${spin} 2s linear infinite;
-  top: calc(50% - 75px / 2);
-  left: calc(50% - 75px / 2);
+
   position: absolute;
   z-index: ${zIndex.spinner};
 `;
@@ -31,4 +32,12 @@ export const Container = styled.div`
   top: 0;
   width: 100%;
   z-index: ${zIndex.loader};
+  
+  ${Spinner} {
+    height: 75px;
+    left: calc(50% - 75px / 2);
+    top: calc(50% - 75px / 2);
+    width: 75px;
+    border-width: 3px;
+  }
 `;
