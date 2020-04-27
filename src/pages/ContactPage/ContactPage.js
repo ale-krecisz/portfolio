@@ -34,7 +34,7 @@ const initialValues = {
 
 const ContactPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isSent, setIsSent] = useState(true);
+  const [isSent, setIsSent] = useState(false);
 
   const handleError = useErrorHandler();
 
@@ -56,9 +56,7 @@ const ContactPage = () => {
       .then(() => {
         setIsLoading(false);
         setIsSent(true);
-        values.email = '';
-        values.firstName = '';
-        values.message = '';
+        setSubmitting(false);
       })
       .catch(err => {
         handleError(err);
