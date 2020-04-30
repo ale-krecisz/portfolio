@@ -100,7 +100,7 @@ export const Container = styled.ul`
 
   ${mediaQuery.medium} {
     font-size: ${fontSize};
-    padding: 0 20% 60px 0;
+    padding: 0 20% 0 0;
     transform: translateY(-20px);
   }
 

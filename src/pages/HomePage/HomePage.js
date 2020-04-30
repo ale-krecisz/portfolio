@@ -7,9 +7,9 @@ import defaultSlide from 'assets/1.jpg';
 import Background from 'components/Background/Background';
 import SearchBar from 'components/SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
-import { Paragraph, Highlight, MainTitle } from 'components/layout';
+import { Paragraph, Highlight, MainTitle, CopyContainer } from 'components/layout';
 
-import { HomeCopyContainer, HomeSection, Note } from './styled';
+import { HomeSection, Note } from './styled';
 
 let timer;
 
@@ -79,30 +79,32 @@ const HomePage = () => {
           </>
         )}
 
-        <HomeCopyContainer>
+        <CopyContainer>
           <MainTitle>
             Co tam <Highlight>?</Highlight>
           </MainTitle>
-          <Paragraph>
-            <strong>
-              I&apos;m Aleksandra, a Warsaw based front-end developer with designing background.
-            </strong>
-            <br />
-            <br />
-            I love original design and creativity. My work has been varied – from websites and web
-            apps to design, print and UX, but whatever I do, I always take a human-centered approach
-            and a keen eye for detail.
-            <br />
-            <br />
-            Let&apos;s get in touch whenever You want to talk with me, employ me or tell me a joke.
-            <br />
-            <br />
-            <strong>
-              Do You want to change <Highlight>the background?</Highlight>
-            </strong>
-          </Paragraph>
-          <SearchBar onSubmit={onSearchSubmit} />
-        </HomeCopyContainer>
+          <div>
+            <Paragraph>
+              <strong>
+                I&apos;m Aleksandra, a Warsaw based front-end developer with design background.
+              </strong>
+              <br />
+              <br />
+              I love original design and creativity. My work has been varied – from websites and web
+              apps to design, print and UX, but whatever I do, I always take a human-centered approach
+              and a keen eye for detail.
+              <br />
+              <br />
+              Let&apos;s get in touch whenever You want to talk with me, employ me or tell me a joke.
+              <br />
+              <br />
+              <strong>
+                Do You want to change <Highlight>the background?</Highlight>
+              </strong>
+            </Paragraph>
+            <SearchBar onSubmit={onSearchSubmit} />
+          </div>
+        </CopyContainer>
       </HomeSection>
     </>
   );

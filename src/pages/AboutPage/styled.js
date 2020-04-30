@@ -1,25 +1,24 @@
 import styled from 'styled-components/macro';
-import { mediaQuery } from 'constants/mediaQuery';
 import { CopyContainer, MainTitle } from 'components/layout';
+import { mediaQuery } from 'constants/mediaQuery';
+import photo from 'assets/11.jpg';
 
 export const Container = styled(CopyContainer)`
-  ${mediaQuery.medium} {
-    padding: 60px 0 20px 140px;
-    margin-bottom: 100px;
-  }
 
-  ${mediaQuery.large} {
-    margin-left: 20vw;
-    max-width: 550px;
+  ${mediaQuery.small} {
+    padding: 0;
   }
 
   ${MainTitle} {
-    ${mediaQuery.medium} {
-      top: 40%;
-    }
+    background: url(${photo}) center center;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 
-    ${mediaQuery.large} {
-      top: 55%;
+    ${mediaQuery.medium} {
+      letter-spacing: -22px;
+      font-size: 120px;
     }
   }
 `;

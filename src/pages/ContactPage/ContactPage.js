@@ -86,7 +86,7 @@ const ContactPage = () => {
                     name="firstName"
                     onChange={handleChange}
                     value={values.firstName}
-                    placeholder="Enter your first name"
+                    placeholder="Enter your name"
                     errors={errors.firstName && touched.firstName && errors.firstName}
                   />
                   <InputField

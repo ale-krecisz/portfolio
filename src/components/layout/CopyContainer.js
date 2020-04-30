@@ -10,7 +10,9 @@ export const CopyContainer = styled.div`
   z-index: ${zIndex.content};
 
   ${mediaQuery.small} {
+    display: flex;
     max-width: 750px;
+    align-items: center;
   }
 
   ${mediaQuery.large} {

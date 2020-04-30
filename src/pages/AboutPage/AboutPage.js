@@ -15,12 +15,12 @@ const AboutPage = () => {
       />
       <Container>
         <MainTitle>
-          <Highlight>안녕하세요</Highlight>
+          안녕하세요
         </MainTitle>
         <Paragraph>
           <strong>
             I&apos;m Aleksandra, a <Highlight>Warsaw based front-end developer</Highlight> with
-            designing background.
+            design background.
           </strong>
           <br />
           <br />
