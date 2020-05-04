@@ -8,6 +8,7 @@ export const MainTitle = styled.h1`
   z-index: ${zIndex.content};
   font-weight: ${fonts.weight.bold};
   margin-bottom: 20px;
+  cursor: pointer;
 
   ${mediaQueryHeight.small} {
     font-size: 120px;

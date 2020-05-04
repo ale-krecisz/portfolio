@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { CopyContainer, MainTitle } from 'components/layout';
+import { CopyContainer, MainTitle, Paragraph } from 'components/layout';
 import { mediaQuery } from 'constants/mediaQuery';
 import photo from 'assets/11.jpg';
 
@@ -20,6 +20,10 @@ export const Container = styled(CopyContainer)`
       letter-spacing: -22px;
       font-size: 120px;
     }
+  }
+
+  ${Paragraph} {
+    max-width: 650px;
   }
 `;
 

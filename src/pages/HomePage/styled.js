@@ -10,7 +10,6 @@ export const HomeSection = styled(Section)`
   ${Paragraph} {
     max-width: 450px;
   }
-
 `;
 
 export const Note = styled(Notification)`

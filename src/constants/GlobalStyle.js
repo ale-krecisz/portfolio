@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components/macro';
 import { colors, fonts } from './styleVariables';
 import { mediaQuery } from 'constants/mediaQuery';
+import cursor from 'assets/cursor.png';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:200,400,700,800&display=swap');
@@ -32,6 +33,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    cursor: url(${cursor}), auto;
   }
 
   button {
