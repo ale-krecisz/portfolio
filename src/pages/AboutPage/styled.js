@@ -6,7 +6,7 @@ import photo from 'assets/11.jpg';
 export const Container = styled(CopyContainer)`
 
   ${mediaQuery.small} {
-    padding: 0;
+    padding: 0 0 100px;
   }
 
   ${MainTitle} {

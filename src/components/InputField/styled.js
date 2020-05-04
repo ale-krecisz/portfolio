@@ -3,6 +3,7 @@ import { fonts, colors } from 'constants/styleVariables';
 import { Field } from 'formik';
 
 export const Error = styled.p`
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%);
   position: absolute;
   font-weight: ${fonts.weight.regular};
   color: ${colors.red.default};
