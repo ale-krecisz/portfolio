@@ -7,6 +7,19 @@ export const Container = styled(CopyContainer)`
 
   ${mediaQuery.small} {
     padding: 0 0 100px;
+    margin-top: -40px;
+  }
+
+  ${mediaQuery.medium} {
+    margin-top: -40px;
+  }
+
+  ${mediaQuery.large} {
+    margin-top: -80px;
+  }
+
+  ${mediaQuery.xlarge} {
+    margin-top: -100px;
   }
 
   ${MainTitle} {

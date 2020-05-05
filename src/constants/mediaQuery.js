@@ -13,6 +13,7 @@ export const mediaQuery = {
   small: `@media screen and (min-width: ${media.small})`,
   medium: `@media screen and (min-width: ${media.medium})`,
   large: `@media screen and (min-width: ${media.large})`,
+  xlarge: `@media screen and (min-width: ${media.xlarge})`,
 };
 
 export const mediaQueryHeight = {

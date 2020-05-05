@@ -5,6 +5,7 @@ import { mediaQuery } from 'constants/mediaQuery';
 const leftOffset = '25px';
 const fontSizeMobileS = '35px';
 const fontSizeMobile = '45px';
+const fontSizeMobileL = '52px';
 const fontSize = '62px';
 const fontSizeL = '75px';
 
@@ -32,6 +33,10 @@ export const Line = styled.li`
 
   ${mediaQuery.xxsmall} {
     height: ${fontSizeMobile};
+  }
+
+  ${mediaQuery.small} {
+    height: ${fontSizeMobileL};
   }
 
   ${mediaQuery.medium} {
@@ -66,6 +71,10 @@ export const Letters = styled.p`
     height: ${fontSizeMobile};
   }
 
+  ${mediaQuery.small} {
+    height: ${fontSizeMobileL};
+  }
+
   ${mediaQuery.medium} {
     height: ${fontSize};
   }
@@ -97,6 +106,10 @@ export const Container = styled.ul`
     transform: translate3d(0, 0, 0);
     padding: 40px 200px 0px 0;
   }
+  
+  ${mediaQuery.small} {
+    font-size: ${fontSizeMobileL};
+  }
 
   ${mediaQuery.medium} {
     font-size: ${fontSize};
@@ -114,6 +127,10 @@ export const Container = styled.ul`
 
       ${mediaQuery.xxsmall} {
         transform: translate3d(0, -${fontSizeMobile}, 0);
+      }
+
+      ${mediaQuery.small} {
+        transform: translate3d(0, -${fontSizeMobileL}, 0);
       }
 
       ${mediaQuery.medium} {
