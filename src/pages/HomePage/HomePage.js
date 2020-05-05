@@ -74,7 +74,7 @@ const HomePage = () => {
           />
         ) : (
           <>
-            <Note>We don&apos;t have what You&apos;re looking for. Try again! </Note>
+            <Note>We don&apos;t have what You&apos;ve been looking for. Try again! </Note>
             <Background src={defaultSet[0].urls.regular} alt={defaultSet[0].alt_desciption} />
           </>
         )}
