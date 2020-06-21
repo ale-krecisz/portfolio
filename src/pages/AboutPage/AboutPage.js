@@ -2,7 +2,9 @@ import React from 'react';
 
 import PerspectiveText from 'components/PerspectiveText/PerspectiveText';
 import { LayoutContainer, Paragraph, Highlight, MainTitle } from 'components/layout';
-import { Container } from './styled';
+import { Container, HobbyContainer, Text, Quote } from './styled';
+
+const musicLink = "https://www.youtube.com/watch?v=BIzdtmPuLWg&list=PLF82671F789565902&index=14";
 
 const AboutPage = () => {
   return (
@@ -37,9 +39,15 @@ const AboutPage = () => {
           <br />
         </Paragraph>
       </Container>
-      {/* <HobbyContainer>
-        <Title>So what else?</Title>
-      </HobbyContainer> */}
+      <Container>
+        <Quote href={musicLink} target="_blank">
+          Chase your dreams not the competition
+        </Quote>
+      </Container>
+      <HobbyContainer>
+        <Text>What am I doing<br/> right now?</Text>
+
+      </HobbyContainer>
     </LayoutContainer>
   );
 };

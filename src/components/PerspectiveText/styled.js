@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 import { colors, fonts, zIndex } from 'constants/styleVariables';
 import { mediaQuery } from 'constants/mediaQuery';
+import photo from 'assets/11.jpg';
 
 const leftOffset = '25px';
 const fontSizeMobileS = '35px';
@@ -64,8 +65,6 @@ export const Letters = styled.p`
   padding: 0 10px;
   transition: all 0.3s ease-in-out;
   transform: translate3d(0, 0, 0);
-  vertical-align: top;
-  white-space: nowrap;
 
   ${mediaQuery.xxsmall} {
     height: ${fontSizeMobile};
@@ -98,13 +97,13 @@ export const Container = styled.ul`
 
   ${mediaQuery.xxsmall} {
     font-size: ${fontSizeMobile};
-    padding: 0px 0 50px 20px;
+    padding: 0 0 100px 20px;
   }
 
   ${mediaQuery.xsmall} {
-    margin: 0 0 0 auto;
+    margin: -100px 0 0 auto;
     transform: translate3d(0, 0, 0);
-    padding: 40px 200px 0px 0;
+    padding: 40px 200px 100px 0;
   }
   
   ${mediaQuery.small} {
@@ -113,7 +112,7 @@ export const Container = styled.ul`
 
   ${mediaQuery.medium} {
     font-size: ${fontSize};
-    padding: 0 20% 0 0;
+    padding: 0 20% 100px 0;
     transform: translateY(-20px);
   }
 
@@ -123,6 +122,11 @@ export const Container = styled.ul`
 
   &:hover {
     ${Letters} {
+      background: url(${photo}) center center no-repeat;
+      background-size: cover;
+      -webkit-background-clip: text;
+      color: transparent;
+
       transform: translate3d(0, -${fontSizeMobileS}, 0);
 
       ${mediaQuery.xxsmall} {
