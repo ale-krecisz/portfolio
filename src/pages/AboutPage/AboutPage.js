@@ -4,7 +4,7 @@ import PerspectiveText from 'components/PerspectiveText/PerspectiveText';
 import { LayoutContainer, Paragraph, Highlight, MainTitle } from 'components/layout';
 import { Container, HobbyContainer, Text, Quote } from './styled';
 
-const musicLink = "https://www.youtube.com/watch?v=BIzdtmPuLWg&list=PLF82671F789565902&index=14";
+const musicLink = 'https://www.youtube.com/watch?v=BIzdtmPuLWg&list=PLF82671F789565902&index=14';
 
 const AboutPage = () => {
   return (
